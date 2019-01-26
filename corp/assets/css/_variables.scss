@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/*
+Colors
+*/
+$beige:#edece9;
+$red:#BF2B28;
+$gray:#F7F7F8;
+$black:#232426;
+
+// kerning
+$small: .1em;
+$regular: .15em;
+$medium: .2em;
+$large: .3em;
+$xlarge: .4em;
+
+$m-breakpoints: (
+  'sp': 'screen and (max-width: 420px)',
+  'tb': 'screen and (max-width: 800px)',
+  'md': 'screen and (max-width: 1250px)',
+) !default;
+
+@mixin mq($m-breakpoint: md) {
+  @media #{map-get($m-breakpoints, $m-breakpoint)} {
+    @content;
+  }
+}
+
+$layers: (
+  bg-image: -100,
+  cover: 5,
+  backlogo: 10,
+  content: 50,
+  title: 100,
+  side: 200,
+  menu: 250,
+  header: 500,
+  modal: 1000,
+  close: 1500,
+  transition: 3000
+) !default;
+
+@mixin layer($layer-name: middle) {
+  z-index :map-get($layers, #{$layer-name});
+}
