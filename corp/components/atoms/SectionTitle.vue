@@ -18,12 +18,6 @@ export default {
 @import '~/assets/css/variables.scss';
 .align {
   margin-bottom: 32px;
-  &.mb80 {
-    margin-bottom: 80px;
-  }
-  &.mb64 {
-    margin-bottom: 64px;
-  }
 }
 .section-title {
   display: inline-block;
@@ -41,12 +35,6 @@ export default {
     width: 100%;
     height: 3px;
     background: $black;
-  }
-  &.mb80 {
-    margin-bottom: 80px;
-  }
-  &.mb64 {
-    margin-bottom: 64px;
   }
 }
 </style>

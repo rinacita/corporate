@@ -35,6 +35,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/assets/css/variables.scss';
+
 .big-copy {
   font-size: 4.8rem;
   margin-bottom: 80px;
@@ -45,5 +47,12 @@ export default {
 .about {
   font-size: 2.4rem;
   line-height: 2;
+}
+
+.mb80 {
+  margin-bottom: 80px;
+  @include mq(sp) {
+    margin-bottom: 32px;
+  }
 }
 </style>
