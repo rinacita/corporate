@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/*
+Colors
+*/
+$gray:#f7f7f7;
+$black:#1b1b19;
+$yellow: #ffec00;
+
+$m-breakpoints: (
+  'sp': 'screen and (max-width: 420px)',
+  'tb': 'screen and (max-width: 800px)',
+  'md': 'screen and (max-width: 1250px)',
+) !default;
+
+@mixin mq($m-breakpoint: md) {
+  @media #{map-get($m-breakpoints, $m-breakpoint)} {
+    @content;
+  }
+}
+
+$layers: (
+) !default;
+
+@mixin layer($layer-name: middle) {
+  z-index :map-get($layers, #{$layer-name});
+}

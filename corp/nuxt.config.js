@@ -14,7 +14,9 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.typekit.net/fcu2hbe.css' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;subset=japanese' }
     ]
   },
 
@@ -27,6 +29,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '@/assets/css/common.scss'
   ],
 
   /*
