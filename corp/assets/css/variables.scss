@@ -24,3 +24,11 @@ $layers: (
 @mixin layer($layer-name: middle) {
   z-index :map-get($layers, #{$layer-name});
 }
+
+@mixin scaleHover() {
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    transform: translate3d(0, -2px, 0) scale3d(1.02, 1.02, 1);
+  }
+}

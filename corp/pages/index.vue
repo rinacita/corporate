@@ -27,4 +27,11 @@ export default {
 main {
   color: $black;
 }
+
+a {
+  color: $black;
+  &:hover {
+    color: $black;
+  }
+}
 </style>

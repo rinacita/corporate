@@ -8,14 +8,12 @@
     slot(name='position')
 </template>
 <style lang="scss" scoped>
+@import '~/assets/css/variables.scss';
+
 .member {
   width: 21.666%;
   margin-bottom: 48px;
-  transition: 0.3s;
-  cursor: pointer;
-  &:hover {
-    transform: translate3d(0, -2px, 0) scale3d(1.02, 1.02, 1);
-  }
+  @include scaleHover();
 }
 .image {
   width: 100%;
