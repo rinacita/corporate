@@ -6,13 +6,6 @@ $gray:#f7f7f7;
 $black:#1b1b19;
 $yellow: #ffec00;
 
-// kerning
-$small: .1em;
-$regular: .15em;
-$medium: .2em;
-$large: .3em;
-$xlarge: .4em;
-
 $m-breakpoints: (
   'sp': 'screen and (max-width: 420px)',
   'tb': 'screen and (max-width: 800px)',
@@ -26,17 +19,6 @@ $m-breakpoints: (
 }
 
 $layers: (
-  bg-image: -100,
-  cover: 5,
-  backlogo: 10,
-  content: 50,
-  title: 100,
-  side: 200,
-  menu: 250,
-  header: 500,
-  modal: 1000,
-  close: 1500,
-  transition: 3000
 ) !default;
 
 @mixin layer($layer-name: middle) {
