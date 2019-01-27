@@ -15,5 +15,6 @@
   font-style: italic;
   padding: 4px 6px;
   letter-spacing: 0.1em;
+  white-space: nowrap;
 }
 </style>

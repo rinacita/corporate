@@ -1,6 +1,6 @@
 <template lang="pug">
 container
-  section-title.mb80 ABOUT US
+  section-title.mb64 ABOUT US
   h3.big-copy ありのまま生きろ。
     br
     | 夢を追い求めろ。
@@ -49,8 +49,8 @@ export default {
   line-height: 2;
 }
 
-.mb80 {
-  margin-bottom: 80px;
+.mb64 {
+  margin-bottom: 64px;
   @include mq(sp) {
     margin-bottom: 32px;
   }
