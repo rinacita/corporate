@@ -63,7 +63,6 @@ export default {
 }
 .text {
   padding-top: 1px;
-  line-height: 2;
 }
 .mb64 {
   margin-bottom: 64px;

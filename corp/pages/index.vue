@@ -3,18 +3,21 @@ main
   about
   team
   news
+  company
 </template>
 
 <script>
 import About from '~/components/About'
 import Team from '~/components/Team'
 import News from '~/components/News'
+import Company from '~/components/Company'
 
 export default {
   components: {
     About,
     Team,
-    News
+    News,
+    Company
   }
 }
 </script>
