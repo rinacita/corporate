@@ -1,16 +1,24 @@
-<template>
+<template lang="pug">
+main
+  about
+  Team
 </template>
 
 <script>
-import styled from 'vue-styled-components'
-
-const Test = styled.div`
-  font-size: 48px;
-`
+import About from '~/components/About'
+import Team from '~/components/Team'
 
 export default {
   components: {
-    Test
+    About,
+    Team
   }
 }
 </script>
+<style lang="scss" scoped>
+@import '~/assets/css/variables.scss';
+
+main {
+  color: $black;
+}
+</style>
