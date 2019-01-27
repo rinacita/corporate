@@ -2,16 +2,19 @@
 main
   about
   team
+  news
 </template>
 
 <script>
 import About from '~/components/About'
 import Team from '~/components/Team'
+import News from '~/components/News'
 
 export default {
   components: {
     About,
-    Team
+    Team,
+    News
   }
 }
 </script>
