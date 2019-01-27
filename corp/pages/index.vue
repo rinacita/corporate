@@ -1,7 +1,7 @@
 <template lang="pug">
 main
   about
-  Team
+  team
 </template>
 
 <script>
