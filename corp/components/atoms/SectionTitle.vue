@@ -1,6 +1,6 @@
 <template lang="pug">
 .align(:style="{ textAlign: this.align }")
-  .section-title
+  .section-title(:class="{ white: this.isWhite }")
     slot
 </template>
 <script>
@@ -9,6 +9,10 @@ export default {
     align: {
       type: String,
       default: 'left'
+    },
+    isWhite: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -27,7 +31,7 @@ export default {
   font-weight: 700;
   font-style: italic;
   padding-bottom: 4px;
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     left: 0;
@@ -35,6 +39,12 @@ export default {
     width: 100%;
     height: 3px;
     background: $black;
+  }
+}
+.white {
+  color: #fff;
+  &::after {
+    background: #fff;
   }
 }
 </style>
