@@ -54,6 +54,7 @@ export default {
   &:last-child {
     margin-bottom: 0;
   }
+  @include scaleHover();
 }
 .override {
   display: flex;
