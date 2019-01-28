@@ -1,5 +1,5 @@
 <template lang="pug">
-main
+div
   about
   team
   news
@@ -25,16 +25,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '~/assets/css/variables.scss';
-
-main {
-  color: $black;
-}
-
-a {
-  color: $black;
-  &:hover {
-    color: $black;
-  }
-}
 </style>
