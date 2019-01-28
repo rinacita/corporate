@@ -2,13 +2,16 @@
 main
   component-header
   nuxt
+  component-footer
 </template>
 <script>
 import ComponentHeader from '~/components/ComponentHeader'
+import ComponentFooter from '~/components/ComponentFooter'
 
 export default {
   components: {
-    ComponentHeader
+    ComponentHeader,
+    ComponentFooter
   }
 }
 </script>
