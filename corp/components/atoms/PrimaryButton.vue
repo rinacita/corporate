@@ -1,5 +1,5 @@
 <template lang="pug">
-a(href='#').button
+a.button
   slot
 </template>
 <style lang="scss" scoped>
