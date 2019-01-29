@@ -27,13 +27,13 @@ export default {
 
 .back {
   background: $gray;
-  padding: 0 24px;
 }
 .wrapper {
   display: flex;
   align-items: flex-end;
   max-width: 1200px;
   margin: auto;
+  padding: 0 48px;
 }
 .info {
   width: 50%;

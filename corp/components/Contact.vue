@@ -24,7 +24,7 @@ export default {
   background: rgba(0, 0, 0, 0.7);
   position: relative;
   color: #fff;
-  padding: 160px 24px;
+  padding: 160px 48px;
   text-align: center;
   &::after {
     content: '';
