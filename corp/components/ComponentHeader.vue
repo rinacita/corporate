@@ -41,7 +41,7 @@ header {
   white-space: nowrap;
   font-size: 1.8rem;
   position: relative;
-  transition: 0.8s;
+  transition: 0.5s;
   &::after {
     content: '';
     position: absolute;
@@ -55,7 +55,7 @@ header {
     transition: 0.3s;
   }
   &:hover {
-    transform: translate3d(-1px, 0, 0);
+    transform: translate3d(0, -4px, 0);
     &::after {
       transform: scale3d(1, 1, 1);
     }
