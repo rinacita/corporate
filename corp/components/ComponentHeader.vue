@@ -22,7 +22,6 @@ header {
   top: 0;
   left: 0;
   z-index: 100;
-  background: #fff;
 }
 .logo {
   width: 150px;

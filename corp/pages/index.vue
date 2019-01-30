@@ -1,5 +1,6 @@
 <template lang="pug">
 div
+  main-visual
   about
   service
   team
@@ -9,6 +10,7 @@ div
 </template>
 
 <script>
+import MainVisual from '~/components/MainVisual'
 import About from '~/components/About'
 import Service from '~/components/Service'
 import Team from '~/components/Team'
@@ -18,6 +20,7 @@ import Contact from '~/components/Contact'
 
 export default {
   components: {
+    MainVisual,
     About,
     Service,
     Team,
