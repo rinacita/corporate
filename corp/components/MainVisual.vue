@@ -33,7 +33,8 @@
 @import '~/assets/css/variables.scss';
 
 .mv {
-  margin-bottom: 5%;
+  display: flex;
+  height: 100vh;
   text-align: center;
   position: relative;
 }
