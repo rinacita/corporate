@@ -2,52 +2,17 @@
 container
   section-title.mb64(align="center") TEAM
   .flex
-    member
-      img(slot='image' src='~/assets/img/ceo.jpg')
-      h3(slot='name') 小澤 昂大
-      tag.margin-right(slot='position') CEO
-      tag.margin-right(slot='position') FOUNDER
-    member
-      img(slot='image' src='~/assets/img/ceo.jpg')
-      h3(slot='name') 小澤 昂大
-      tag.margin-right(slot='position') CEO
-      tag.margin-right(slot='position') FOUNDER
-    member
-      img(slot='image' src='~/assets/img/ceo.jpg')
-      h3(slot='name') 小澤 昂大
-      tag.margin-right(slot='position') CEO
-      tag.margin-right(slot='position') FOUNDER
-    member
-      img(slot='image' src='~/assets/img/ceo.jpg')
-      h3(slot='name') 小澤 昂大
-      tag.margin-right(slot='position') CEO
-      tag.margin-right(slot='position') FOUNDER
-    member
-      img(slot='image' src='~/assets/img/ceo.jpg')
-      h3(slot='name') 小澤 昂大
-      tag.margin-right(slot='position') CEO
-      tag.margin-right(slot='position') FOUNDER
-    member
-      img(slot='image' src='~/assets/img/ceo.jpg')
-      h3(slot='name') 小澤 昂大
-      tag.margin-right(slot='position') CEO
-      tag.margin-right(slot='position') FOUNDER
-    member
-      img(slot='image' src='~/assets/img/ceo.jpg')
-      h3(slot='name') 小澤 昂大
-      tag.margin-right(slot='position') CEO
-      tag.margin-right(slot='position') FOUNDER
-    member
-      img(slot='image' src='~/assets/img/ceo.jpg')
-      h3(slot='name') 小澤 昂大
-      tag.margin-right(slot='position') CEO
-      tag.margin-right(slot='position') FOUNDER
+    member(v-for="member in activeMembers" :key="member.id")
+      img(slot='image' :src="require('~/assets/img/' + member.image + '.jpg')")
+      h3(slot='name') {{member.name}}
+      tag(v-for="position in member.position").margin-right(slot='position') {{position}}
 </template>
 <script>
 import Container from '~/components/atoms/Container'
 import SectionTitle from '~/components/atoms/SectionTitle'
 import Member from '~/components/Member'
 import Tag from '~/components/atoms/Tag'
+import teamData from '~/assets/data/team.json'
 
 export default {
   components: {
@@ -55,6 +20,18 @@ export default {
     SectionTitle,
     Member,
     Tag
+  },
+  data: () => {
+    return {
+      members: teamData
+    }
+  },
+  computed: {
+    activeMembers: function() {
+      return this.members.filter(member => {
+        return member.isActive
+      })
+    }
   }
 }
 </script>
