@@ -35,6 +35,7 @@ export default {
     left: 0;
     background: no-repeat center;
     background-image: url(~assets/img/dummy.jpg);
+    background-size: cover;
     z-index: -1;
   }
 }
