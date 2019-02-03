@@ -61,14 +61,5 @@
     "facebook": "ozawa.kodai",
     "image": "ceo",
     "isActive": true
-  },
-  {
-    "id": 8,
-    "name": "小澤 昂大",
-    "position": ["CEO", "FOUNDER"],
-    "twitter": "kodai_ozawa",
-    "facebook": "ozawa.kodai",
-    "image": "ceo",
-    "isActive": true
   }
 ]

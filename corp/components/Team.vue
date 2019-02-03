@@ -2,7 +2,7 @@
 container
   section-title.mb64(align="center") TEAM
   .flex
-    member(v-for="member in activeMembers" :key="member.id")
+    member(v-for="(member, index) in activeMembers" :key="member.id")
       img(slot='image' :src="require('~/assets/img/' + member.image + '.jpg')")
       h3(slot='name') {{member.name}}
       tag(v-for="position in member.position").margin-right(slot='position') {{position}}
@@ -42,6 +42,17 @@ export default {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  &::before {
+    content: '';
+    display: block;
+    width: 21.666%;
+    order: 1;
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 21.666%;
+  }
 }
 .mb64 {
   margin-bottom: 64px;
