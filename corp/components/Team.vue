@@ -13,25 +13,27 @@ container
       name='detail'
       pre-mount=true
     )
-      .modal-inner
-        .modal-image
-          img(:src="require('~/assets/img/' + members[modalIndex].image + '.jpg')")
-        .modal-info
-          .modal-top
-            .modal-name {{members[modalIndex].name}}
-            tag(v-for="position in members[modalIndex].position").margin-right {{position}}
-            .link
-              a.sns(v-if="members[modalIndex].twitter" :href="'https://twitter.com/' + members[modalIndex].twitter" target="blank")
-                i.fab.fa-twitter
-              a.sns(v-if="members[modalIndex].facebook" :href="'https://www.facebook.com/' + members[modalIndex].facebook" target="blank")
-                i.fab.fa-instagram
-          .modal-text(v-if="members[modalIndex].history") {{members[modalIndex].history}}
-        .direction
-          div(@click="previous")
-            i.fab.fa-twitter
-          div(@click="next")
-            i.fab.fa-instagram
-
+      div
+        .modal-inner
+          .modal-image
+            img(:src="require('~/assets/img/' + members[modalIndex].image + '.jpg')")
+          .modal-info
+            .modal-top
+              .modal-name {{members[modalIndex].name}}
+              tag.override(v-for="position in members[modalIndex].position").margin-right {{position}}
+              .modal-link
+                a.sns(v-if="members[modalIndex].twitter" :href="'https://twitter.com/' + members[modalIndex].twitter" target="blank")
+                  i.fab.fa-twitter
+                a.sns(v-if="members[modalIndex].facebook" :href="'https://www.facebook.com/' + members[modalIndex].facebook" target="blank")
+                  i.fab.fa-facebook
+            p.modal-text(v-if="members[modalIndex].history") {{members[modalIndex].history}}
+          .direction
+            button.direction-item(@click="previous")
+              i.fas.fa-angle-left
+            button.direction-item(@click="next")
+              i.fas.fa-angle-right
+          .close(@click="close")
+            i.fas.fa-times
 </template>
 <script>
 import Container from '~/components/atoms/Container'
@@ -125,5 +127,81 @@ export default {
   font-weight: 900;
   letter-spacing: 0.1em;
   margin-bottom: 6px;
+}
+.modal {
+  &-inner {
+    display: flex;
+    position: relative;
+    background: #fff;
+  }
+  &-image {
+    max-width: 400px;
+    min-width: 400px;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-info {
+    display: flex;
+    flex-direction: column;
+    padding: 64px 64px 80px;
+  }
+  &-top {
+  }
+  &-name {
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  &-link {
+    margin-top: 18px;
+  }
+  &-text {
+    margin-top: 24px;
+  }
+}
+.direction {
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: $yellow;
+    color: $black;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+    &:hover {
+      background: $black;
+      color: #fff;
+    }
+  }
+}
+.close {
+  position: absolute;
+}
+.sns {
+  font-size: 1.2em;
+  margin-left: 16px;
+  color: $black;
+  &:first-child {
+    margin-left: 0;
+  }
+  i {
+    @include scaleHover();
+  }
+}
+.override {
+  font-size: 1.4rem;
+  padding: 6px;
 }
 </style>
