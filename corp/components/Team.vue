@@ -33,19 +33,21 @@ container
             button.direction-item(@click="next")
               i.fas.fa-angle-right
           .close(@click="close")
-            i.fas.fa-times
+            hamburger
 </template>
 <script>
 import Container from '~/components/atoms/Container'
 import SectionTitle from '~/components/atoms/SectionTitle'
 import Tag from '~/components/atoms/Tag'
+import Hamburger from '~/components/atoms/Hamburger'
 import teamData from '~/assets/data/team.json'
 
 export default {
   components: {
     Container,
     SectionTitle,
-    Tag
+    Tag,
+    Hamburger
   },
   data: () => {
     return {
@@ -188,6 +190,8 @@ export default {
 }
 .close {
   position: absolute;
+  top: 16px;
+  right: 16px;
 }
 .sns {
   font-size: 1.2em;
