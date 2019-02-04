@@ -28,6 +28,7 @@ export default {
           return newsItem.isActive
         })
         .slice(0, 5)
+        .reverse()
     }
   }
 }
