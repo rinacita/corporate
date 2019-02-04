@@ -3,30 +3,32 @@
   .news
     section-title.mb64(align='center') NEWS
     .wrapper
-      a.item
-        tag.override 2019.01.20
-        p.text ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施
-      a.item
-        tag.override 2019.01.20
-        p.text ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施
-      a.item
-        tag.override 2019.01.20
-        p.text ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施
-      a.item
-        tag.override 2019.01.20
-        p.text ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施
-      a.item
-        tag.override 2019.01.20
-        p.text ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施
-
+      a.item(v-for="newsItem in activeNewsItems" :key="newsItem.id" :href="newsItem.link" target="blank")
+        tag.override {{newsItem.date}}
+        p.text {{newsItem.title}}
 </template>
 <script>
 import SectionTitle from '~/components/atoms/SectionTitle'
 import Tag from '~/components/atoms/Tag'
+import newsData from '~/assets/data/news.json'
 export default {
   components: {
     SectionTitle,
     Tag
+  },
+  data: () => {
+    return {
+      newsItems: newsData
+    }
+  },
+  computed: {
+    activeNewsItems: function() {
+      return this.newsItems
+        .filter(newsItem => {
+          return newsItem.isActive
+        })
+        .slice(0, 5)
+    }
   }
 }
 </script>
@@ -51,6 +53,7 @@ export default {
 .item {
   display: flex;
   margin-bottom: 24px;
+  color: $black;
   &:last-child {
     margin-bottom: 0;
   }
