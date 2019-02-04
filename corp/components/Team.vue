@@ -33,7 +33,7 @@ container
             button.direction-item(@click="next")
               i.fas.fa-angle-right
           .close(@click="close")
-            hamburger
+            hamburger(isClose)
 </template>
 <script>
 import Container from '~/components/atoms/Container'
@@ -190,8 +190,8 @@ export default {
 }
 .close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 4px;
+  right: 4px;
 }
 .sns {
   font-size: 1.2em;
