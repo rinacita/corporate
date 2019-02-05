@@ -43,6 +43,9 @@ export default {
   background: url(~assets/img/dummy.jpg) no-repeat center;
   background-size: cover;
   text-align: center;
+  @include mq(tb) {
+    padding: 120px 24px;
+  }
 }
 .news {
   display: inline-block;
@@ -50,6 +53,9 @@ export default {
   background: #fff;
   max-width: 1000px;
   padding: 80px 100px 100px;
+  @include mq(tb) {
+    padding: 60px;
+  }
 }
 .item {
   display: flex;
@@ -71,6 +77,9 @@ export default {
 }
 .mb64 {
   margin-bottom: 64px;
+  @include mq(tb) {
+    margin-bottom: 48px;
+  }
   @include mq(sp) {
     margin-bottom: 32px;
   }

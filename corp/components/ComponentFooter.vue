@@ -19,6 +19,9 @@ footer {
   font-family: futura-pt-bold;
   font-weight: 700;
   font-style: italic;
+  @include mq(tb) {
+    padding: 60px 24px;
+  }
 }
 .wrapper {
   display: inline-flex;

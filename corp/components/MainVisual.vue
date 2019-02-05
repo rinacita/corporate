@@ -39,6 +39,10 @@
   position: relative;
   font-size: 100px;
   margin-bottom: 200px;
+  @include mq(tb) {
+    font-size: 70px;
+    margin-bottom: 0;
+  }
 }
 .copy {
   position: absolute;
@@ -59,6 +63,9 @@
   padding: 4px 24px;
   background: #fff;
   white-space: nowrap;
+  @include mq(tb) {
+    font-size: 5rem;
+  }
 }
 .small {
   display: inline-block;
@@ -68,6 +75,9 @@
   background: #fff;
   letter-spacing: 0.08em;
   white-space: nowrap;
+  @include mq(tb) {
+    font-size: 1.8rem;
+  }
 }
 .wrapper {
   display: inline-flex;
@@ -99,8 +109,6 @@
 }
 .top {
   align-items: flex-end;
-}
-.bottom {
 }
 .right {
   flex-direction: column;

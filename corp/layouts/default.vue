@@ -21,6 +21,10 @@ export default {
 
 main {
   color: $black;
+  font-size: 1.6rem;
+  @include mq(tb) {
+    font-size: 1.4rem;
+  }
 }
 
 a {

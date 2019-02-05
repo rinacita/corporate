@@ -105,8 +105,8 @@ export default {
 }
 .mb64 {
   margin-bottom: 64px;
-  @include mq(sp) {
-    margin-bottom: 32px;
+  @include mq(tb) {
+    margin-bottom: 48px;
   }
 }
 .margin-right {
@@ -129,6 +129,9 @@ export default {
   font-weight: 900;
   letter-spacing: 0.1em;
   margin-bottom: 6px;
+  @include mq(tb) {
+    font-size: 1.6rem;
+  }
 }
 .modal {
   &-inner {
@@ -137,25 +140,29 @@ export default {
     background: #fff;
   }
   &-image {
-    max-width: 400px;
-    min-width: 400px;
+    max-width: 40%;
+    min-width: 40%;
     img {
       height: 100%;
       object-fit: cover;
     }
+    /* @include mq(tb) {
+      margin-bottom: 32px;
+    } */
   }
   &-info {
     display: flex;
     flex-direction: column;
     padding: 64px 64px 80px;
   }
-  &-top {
-  }
   &-name {
     font-size: 2.4rem;
     font-weight: 900;
     letter-spacing: 0.05em;
     margin-bottom: 8px;
+    @include mq(tb) {
+      font-size: 2rem;
+    }
   }
   &-link {
     margin-top: 18px;

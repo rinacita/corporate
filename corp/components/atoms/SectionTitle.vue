@@ -40,6 +40,9 @@ export default {
     height: 3px;
     background: $black;
   }
+  @include mq(tb) {
+    font-size: 2.4rem;
+  }
 }
 .white {
   color: #fff;

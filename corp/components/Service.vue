@@ -38,10 +38,17 @@ export default {
 .info {
   width: 50%;
   margin: 200px 48px 200px 0;
+  @include mq(tb) {
+    width: 70%;
+    margin: 120px 16px 120px 0;
+  }
 }
 .logo {
   width: 200px;
   margin-bottom: 32px;
+  @include mq(tb) {
+    width: 160px;
+  }
 }
 .text {
   margin-bottom: 32px;
@@ -51,6 +58,9 @@ export default {
   left: 130px;
   margin-top: 32px;
   max-width: 560px;
+  @include mq(tb) {
+    left: 80px;
+  }
 }
 .override {
   margin-bottom: 48px;

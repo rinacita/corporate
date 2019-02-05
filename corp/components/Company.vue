@@ -29,6 +29,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '~/assets/css/variables.scss';
+
 .wrapper {
   max-width: 1000px;
   margin: auto;
@@ -46,5 +48,8 @@ export default {
   margin-bottom: 12px;
   letter-spacing: 0.1em;
   font-weight: 900;
+  @include mq(tb) {
+    font-size: 1.6rem;
+  }
 }
 </style>
