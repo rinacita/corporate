@@ -3,13 +3,20 @@ header
   a.logo(href='/')
     img(src='~/assets/img/logo.svg')
   .menu
-    a.link(href='#') ABOUT US
-    a.link(href='#') SERVICE
-    a.link(href='#') TEAM
-    a.link(href='#') NEWS
-    a.link(href='#') COMPANY
-    a.link(href='#') CONTACT
+    a.link(v-for="item in items" :key="item.id" :href="'#' + item.link") {{item.title}}
 </template>
+<script>
+import nav from '~/assets/data/nav.json'
+
+export default {
+  data: () => {
+    return {
+      items: nav
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 @import '~/assets/css/variables.scss';
 

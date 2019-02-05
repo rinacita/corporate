@@ -1,6 +1,6 @@
 <template lang="pug">
-container
-  section-title.mb64(align="center") TEAM
+container(:id="sections[2].link")
+  section-title.mb64(align="center") {{sections[2].title}}
   .flex
     .member(v-for="(member, index) in activeMembers" :key="member.id" @click="open(index)")
       .image
@@ -41,6 +41,7 @@ import SectionTitle from '~/components/atoms/SectionTitle'
 import Tag from '~/components/atoms/Tag'
 import Hamburger from '~/components/atoms/Hamburger'
 import teamData from '~/assets/data/team.json'
+import nav from '~/assets/data/nav.json'
 
 export default {
   components: {
@@ -52,7 +53,8 @@ export default {
   data: () => {
     return {
       members: teamData,
-      modalIndex: 0
+      modalIndex: 0,
+      sections: nav
     }
   },
   computed: {

@@ -1,7 +1,7 @@
 <template lang="pug">
-.back
+.back(:id="sections[3].link")
   .news
-    section-title.mb64(align='center') NEWS
+    section-title.mb64(align='center') {{sections[3].title}}
     .wrapper
       a.item(v-for="newsItem in activeNewsItems" :key="newsItem.id" :href="newsItem.link" target="blank")
         tag.override {{newsItem.date}}
@@ -11,6 +11,8 @@
 import SectionTitle from '~/components/atoms/SectionTitle'
 import Tag from '~/components/atoms/Tag'
 import newsData from '~/assets/data/news.json'
+import nav from '~/assets/data/nav.json'
+
 export default {
   components: {
     SectionTitle,
@@ -18,7 +20,8 @@ export default {
   },
   data: () => {
     return {
-      newsItems: newsData
+      newsItems: newsData,
+      sections: nav
     }
   },
   computed: {

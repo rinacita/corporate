@@ -1,6 +1,6 @@
 <template lang="pug">
-container
-  section-title.mb64 ABOUT US
+container(:id="sections[0].link")
+  section-title.mb64 {{sections[0].title}}
   h3.big-copy ありのまま生きろ。
     br
     | 夢を追い求めろ。
@@ -25,11 +25,17 @@ container
 <script>
 import Container from '~/components/atoms/Container'
 import SectionTitle from '~/components/atoms/SectionTitle'
+import nav from '~/assets/data/nav.json'
 
 export default {
   components: {
     Container,
     SectionTitle
+  },
+  data: () => {
+    return {
+      sections: nav
+    }
   }
 }
 </script>

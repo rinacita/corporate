@@ -1,8 +1,8 @@
 <template lang="pug">
-.back
+.back(:id="sections[1].link")
   .wrapper
     .info
-      section-title.override SERVICE
+      section-title.override {{sections[1].title}}
       .logo
         img(src='~/assets/img/logo.svg')
       p.text この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、
@@ -13,11 +13,17 @@
 <script>
 import SectionTitle from '~/components/atoms/SectionTitle'
 import PrimaryButton from '~/components/atoms/PrimaryButton'
+import nav from '~/assets/data/nav.json'
 
 export default {
   components: {
     SectionTitle,
     PrimaryButton
+  },
+  data: () => {
+    return {
+      sections: nav
+    }
   }
 }
 </script>

@@ -31,6 +31,7 @@ export default {
   font-weight: 700;
   font-style: italic;
   padding-bottom: 4px;
+  text-transform: uppercase;
   &::after {
     content: '';
     position: absolute;
