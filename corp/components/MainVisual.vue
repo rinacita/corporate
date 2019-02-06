@@ -37,10 +37,18 @@
   height: 100vh;
   text-align: center;
   position: relative;
-  font-size: 100px;
+  font-size: 90px;
   margin-bottom: 200px;
-  @include mq(tb) {
+  @include mq(xl) {
     font-size: 70px;
+    margin-bottom: 0;
+  }
+  @include mq(md) {
+    font-size: 60px;
+    margin-bottom: 0;
+  }
+  @include mq(sm) {
+    font-size: 40px;
     margin-bottom: 0;
   }
 }
@@ -63,7 +71,7 @@
   padding: 4px 24px;
   background: #fff;
   white-space: nowrap;
-  @include mq(tb) {
+  @include mq(md) {
     font-size: 5rem;
   }
 }
@@ -75,7 +83,7 @@
   background: #fff;
   letter-spacing: 0.08em;
   white-space: nowrap;
-  @include mq(tb) {
+  @include mq(md) {
     font-size: 1.8rem;
   }
 }

@@ -45,7 +45,7 @@ export default {
     background-size: cover;
     z-index: -1;
   }
-  @include mq(tb) {
+  @include mq(md) {
     padding: 120px 48px;
   }
 }

@@ -48,7 +48,7 @@ export default {
   margin-bottom: 80px;
   line-height: 1.6;
   letter-spacing: 0.05em;
-  @include mq(tb) {
+  @include mq(md) {
     font-size: 3.2rem;
     margin-bottom: 40px;
   }
@@ -56,14 +56,14 @@ export default {
 
 .about {
   font-size: 2.4rem;
-  @include mq(tb) {
+  @include mq(md) {
     font-size: 1.8rem;
   }
 }
 
 .mb64 {
   margin-bottom: 64px;
-  @include mq(tb) {
+  @include mq(md) {
     margin-bottom: 32px;
   }
 }

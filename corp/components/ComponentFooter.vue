@@ -19,7 +19,7 @@ footer {
   font-family: futura-pt-bold;
   font-weight: 700;
   font-style: italic;
-  @include mq(tb) {
+  @include mq(md) {
     padding: 60px 24px;
   }
 }

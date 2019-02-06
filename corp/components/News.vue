@@ -46,7 +46,7 @@ export default {
   background: url(~assets/img/dummy.jpg) no-repeat center;
   background-size: cover;
   text-align: center;
-  @include mq(tb) {
+  @include mq(md) {
     padding: 120px 24px;
   }
 }
@@ -56,7 +56,7 @@ export default {
   background: #fff;
   max-width: 1000px;
   padding: 80px 100px 100px;
-  @include mq(tb) {
+  @include mq(md) {
     padding: 60px;
   }
 }
@@ -80,10 +80,10 @@ export default {
 }
 .mb64 {
   margin-bottom: 64px;
-  @include mq(tb) {
+  @include mq(md) {
     margin-bottom: 48px;
   }
-  @include mq(sp) {
+  @include mq(xs) {
     margin-bottom: 32px;
   }
 }

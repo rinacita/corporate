@@ -44,7 +44,7 @@ export default {
 .info {
   width: 50%;
   margin: 200px 48px 200px 0;
-  @include mq(tb) {
+  @include mq(md) {
     width: 70%;
     margin: 120px 16px 120px 0;
   }
@@ -52,7 +52,7 @@ export default {
 .logo {
   width: 200px;
   margin-bottom: 32px;
-  @include mq(tb) {
+  @include mq(md) {
     width: 160px;
   }
 }
@@ -64,7 +64,7 @@ export default {
   left: 130px;
   margin-top: 32px;
   max-width: 560px;
-  @include mq(tb) {
+  @include mq(md) {
     left: 80px;
   }
 }

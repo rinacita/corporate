@@ -10,7 +10,7 @@
   width: 100%;
   padding: 240px 48px;
   margin: auto;
-  @include mq(tb) {
+  @include mq(md) {
     padding: 120px 48px;
   }
 }

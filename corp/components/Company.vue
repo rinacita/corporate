@@ -55,7 +55,7 @@ export default {
   margin-bottom: 12px;
   letter-spacing: 0.1em;
   font-weight: 900;
-  @include mq(tb) {
+  @include mq(md) {
     font-size: 1.6rem;
   }
 }

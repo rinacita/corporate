@@ -41,7 +41,7 @@ export default {
     height: 3px;
     background: $black;
   }
-  @include mq(tb) {
+  @include mq(md) {
     font-size: 2.4rem;
   }
 }

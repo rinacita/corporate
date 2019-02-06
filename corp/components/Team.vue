@@ -97,17 +97,23 @@ export default {
     content: '';
     display: block;
     width: 21.666%;
+    @include mq(md) {
+      width: 30%;
+    }
     order: 1;
   }
   &::after {
     content: '';
     display: block;
     width: 21.666%;
+    @include mq(md) {
+      width: 30%;
+    }
   }
 }
 .mb64 {
   margin-bottom: 64px;
-  @include mq(tb) {
+  @include mq(md) {
     margin-bottom: 48px;
   }
 }
@@ -121,6 +127,9 @@ export default {
   width: 21.666%;
   margin-bottom: 48px;
   @include scaleHover();
+  @include mq(md) {
+    width: 30%;
+  }
 }
 .image {
   width: 100%;
@@ -131,7 +140,7 @@ export default {
   font-weight: 900;
   letter-spacing: 0.1em;
   margin-bottom: 6px;
-  @include mq(tb) {
+  @include mq(md) {
     font-size: 1.6rem;
   }
 }
@@ -148,7 +157,7 @@ export default {
       height: 100%;
       object-fit: cover;
     }
-    /* @include mq(tb) {
+    /* @include mq(md) {
       margin-bottom: 32px;
     } */
   }
@@ -162,7 +171,7 @@ export default {
     font-weight: 900;
     letter-spacing: 0.05em;
     margin-bottom: 8px;
-    @include mq(tb) {
+    @include mq(md) {
       font-size: 2rem;
     }
   }
