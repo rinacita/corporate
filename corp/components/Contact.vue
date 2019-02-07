@@ -1,7 +1,7 @@
 <template lang="pug">
-.back
+.back(:id="sections[5].link")
   .wrapper
-    section-title(align='center' isWhite) CONTACT
+    section-title(align='center' isWhite) {{sections[5].title}}
     p.text 共催・提携や取材のご依頼、採用に関するお問い合わせは下記よりお気軽にお問い合わせください。
       br
       | お問い合わせ内容の確認後、担当者よりご連絡させて頂きます。
@@ -10,10 +10,17 @@
 <script>
 import SectionTitle from '~/components/atoms/SectionTitle'
 import PrimaryButton from '~/components/atoms/PrimaryButton'
+import nav from '~/assets/data/nav.json'
+
 export default {
   components: {
     SectionTitle,
     PrimaryButton
+  },
+  data: () => {
+    return {
+      sections: nav
+    }
   }
 }
 </script>
@@ -37,6 +44,9 @@ export default {
     background-image: url(~assets/img/dummy.jpg);
     background-size: cover;
     z-index: -1;
+  }
+  @include mq(md) {
+    padding: 120px 48px;
   }
 }
 .text {

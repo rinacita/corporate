@@ -3,13 +3,34 @@ header
   a.logo(href='/')
     img(src='~/assets/img/logo.svg')
   .menu
-    a.link(href='#') ABOUT US
-    a.link(href='#') SERVICE
-    a.link(href='#') TEAM
-    a.link(href='#') NEWS
-    a.link(href='#') COMPANY
-    a.link(href='#') CONTACT
+    a.link(v-for="item in items" :key="item.id" :href="'#' + item.link") {{item.title}}
+  .mobile-menu(@click="handleToggle" :class="{isOpen: this.isOpen}")
+    hamburger(v-bind:isClose="isOpen" isMenu)
+    .menu-wrap(v-if="isOpen")
+      a.link-mobile(v-for="item in items" :key="item.id" :href="'#' + item.link") {{item.title}}
 </template>
+<script>
+import Hamburger from '~/components/atoms/Hamburger'
+import nav from '~/assets/data/nav.json'
+
+export default {
+  components: {
+    Hamburger
+  },
+  data: () => {
+    return {
+      items: nav,
+      isOpen: false
+    }
+  },
+  methods: {
+    handleToggle() {
+      this.isOpen = !this.isOpen
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 @import '~/assets/css/variables.scss';
 
@@ -22,6 +43,9 @@ header {
   top: 0;
   left: 0;
   z-index: 100;
+  @include mq(lg) {
+    padding: 24px;
+  }
 }
 .logo {
   width: 150px;
@@ -32,6 +56,9 @@ header {
   font-family: futura-pt-bold;
   font-weight: 700;
   font-style: italic;
+  @include mq(lg) {
+    display: none;
+  }
 }
 .link {
   display: inline-block;
@@ -58,6 +85,41 @@ header {
     &::after {
       transform: scale3d(1, 1, 1);
     }
+  }
+}
+.mobile-menu {
+  display: none;
+  position: relative;
+  transition: 0.3s;
+  @include mq(lg) {
+    display: block;
+  }
+  &.isOpen {
+    background: $black;
+  }
+}
+.menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: $black;
+  padding: 40px;
+  font-family: futura-pt-bold;
+  font-weight: 700;
+  font-style: italic;
+}
+.link-mobile {
+  display: block;
+  color: #fff;
+  margin-bottom: 32px;
+  letter-spacing: 0.05em;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.closeIcon {
+  .bar {
+    background: #fff;
   }
 }
 </style>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "ABOUT US",
+    "link": "about",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "title": "SERVICE",
+    "link": "service",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "title": "TEAM",
+    "link": "team",
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "title": "NEWS",
+    "link": "news",
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "title": "COMPANY",
+    "link": "company",
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "title": "CONTACT",
+    "link": "contact",
+    "isActive": true
+  }
+]

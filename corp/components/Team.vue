@@ -1,6 +1,6 @@
 <template lang="pug">
-container
-  section-title.mb64(align="center") TEAM
+container(:id="sections[2].link")
+  section-title.mb64(align="center") {{sections[2].title}}
   .flex
     .member(v-for="(member, index) in activeMembers" :key="member.id" @click="open(index)")
       .image
@@ -41,6 +41,7 @@ import SectionTitle from '~/components/atoms/SectionTitle'
 import Tag from '~/components/atoms/Tag'
 import Hamburger from '~/components/atoms/Hamburger'
 import teamData from '~/assets/data/team.json'
+import nav from '~/assets/data/nav.json'
 
 export default {
   components: {
@@ -52,7 +53,8 @@ export default {
   data: () => {
     return {
       members: teamData,
-      modalIndex: 0
+      modalIndex: 0,
+      sections: nav
     }
   },
   computed: {
@@ -95,18 +97,24 @@ export default {
     content: '';
     display: block;
     width: 21.666%;
+    @include mq(md) {
+      width: 30%;
+    }
     order: 1;
   }
   &::after {
     content: '';
     display: block;
     width: 21.666%;
+    @include mq(md) {
+      width: 30%;
+    }
   }
 }
 .mb64 {
   margin-bottom: 64px;
-  @include mq(sp) {
-    margin-bottom: 32px;
+  @include mq(md) {
+    margin-bottom: 48px;
   }
 }
 .margin-right {
@@ -119,6 +127,9 @@ export default {
   width: 21.666%;
   margin-bottom: 48px;
   @include scaleHover();
+  @include mq(md) {
+    width: 30%;
+  }
 }
 .image {
   width: 100%;
@@ -129,6 +140,9 @@ export default {
   font-weight: 900;
   letter-spacing: 0.1em;
   margin-bottom: 6px;
+  @include mq(md) {
+    font-size: 1.6rem;
+  }
 }
 .modal {
   &-inner {
@@ -137,25 +151,29 @@ export default {
     background: #fff;
   }
   &-image {
-    max-width: 400px;
-    min-width: 400px;
+    max-width: 40%;
+    min-width: 40%;
     img {
       height: 100%;
       object-fit: cover;
     }
+    /* @include mq(md) {
+      margin-bottom: 32px;
+    } */
   }
   &-info {
     display: flex;
     flex-direction: column;
     padding: 64px 64px 80px;
   }
-  &-top {
-  }
   &-name {
     font-size: 2.4rem;
     font-weight: 900;
     letter-spacing: 0.05em;
     margin-bottom: 8px;
+    @include mq(md) {
+      font-size: 2rem;
+    }
   }
   &-link {
     margin-top: 18px;

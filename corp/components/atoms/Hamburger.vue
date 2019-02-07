@@ -6,7 +6,7 @@
         .bar
         .bar
         .bar
-      .inner.closeIcon
+      .inner.closeIcon(:class="{ isMenu: this.isMenu }")
         .bar
         .bar
 </template>
@@ -14,6 +14,10 @@
 export default {
   props: {
     isClose: {
+      type: Boolean,
+      default: false
+    },
+    isMenu: {
       type: Boolean,
       default: false
     }
@@ -76,6 +80,11 @@ export default {
       top: auto;
       bottom: 0;
     }
+  }
+}
+.isMenu {
+  .bar {
+    background: #fff;
   }
 }
 .slider {

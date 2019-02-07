@@ -1,6 +1,6 @@
 <template lang="pug">
-container
-  section-title(align='center') COMPANY
+container(:id="sections[4].link")
+  section-title(align='center') {{sections[4].title}}
   .wrapper
     .item
       .title 会社名
@@ -21,14 +21,23 @@ container
 <script>
 import SectionTitle from '~/components/atoms/SectionTitle'
 import Container from '~/components/atoms/Container'
+import nav from '~/assets/data/nav.json'
+
 export default {
   components: {
     SectionTitle,
     Container
+  },
+  data: () => {
+    return {
+      sections: nav
+    }
   }
 }
 </script>
 <style lang="scss" scoped>
+@import '~/assets/css/variables.scss';
+
 .wrapper {
   max-width: 1000px;
   margin: auto;
@@ -46,5 +55,8 @@ export default {
   margin-bottom: 12px;
   letter-spacing: 0.1em;
   font-weight: 900;
+  @include mq(md) {
+    font-size: 1.6rem;
+  }
 }
 </style>
