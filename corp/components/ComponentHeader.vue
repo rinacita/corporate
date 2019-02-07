@@ -5,7 +5,7 @@ header
   .menu
     a.link(v-for="item in items" :key="item.id" :href="'#' + item.link") {{item.title}}
   .mobile-menu(@click="handleToggle" :class="{isOpen: this.isOpen}")
-    hamburger(v-bind:isClose="isOpen")
+    hamburger(v-bind:isClose="isOpen" isMenu)
     .menu-wrap(v-if="isOpen")
       a.link-mobile(v-for="item in items" :key="item.id" :href="'#' + item.link") {{item.title}}
 </template>
