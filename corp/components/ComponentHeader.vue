@@ -46,10 +46,18 @@ header {
   @include mq(lg) {
     padding: 24px;
   }
+  @include mq(sm) {
+    padding: 12px 12px 12px 24px;
+  }
 }
 .logo {
   width: 150px;
+  display: flex;
+  align-items: center;
   @include scaleHover();
+  @include mq(sm) {
+    width: 100px;
+  }
 }
 .menu {
   display: flex;

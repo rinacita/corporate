@@ -7,7 +7,7 @@ container(:id="sections[2].link")
         img(:src="require('~/assets/img/' + member.image + '.jpg')")
       div
         .name {{member.name}}
-        tag(v-for="position in member.position").margin-right {{position}}
+        tag(v-for="position in member.position").margin-right.mobile {{position}}
   no-ssr
     modal(
       name='detail'
@@ -156,6 +156,9 @@ export default {
   @include mq(md) {
     font-size: 1.6rem;
   }
+  @include mq(sm) {
+    font-size: 1.4rem;
+  }
 }
 .modal {
   &-inner {
@@ -238,5 +241,8 @@ export default {
 .override {
   font-size: 1.4rem;
   padding: 6px;
+}
+.mobile {
+  font-size: 1rem;
 }
 </style>
