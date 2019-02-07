@@ -25,6 +25,9 @@ main {
   @include mq(md) {
     font-size: 1.4rem;
   }
+  @include mq(sm) {
+    font-size: 1.2rem;
+  }
 }
 
 a {

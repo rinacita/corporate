@@ -48,6 +48,9 @@ export default {
   @include mq(md) {
     padding: 120px 48px;
   }
+  @include mq(sm) {
+    padding: 80px 32px;
+  }
 }
 .text {
   margin-bottom: 32px;

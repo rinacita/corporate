@@ -58,5 +58,9 @@ export default {
   @include mq(md) {
     font-size: 1.6rem;
   }
+  @include mq(sm) {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+  }
 }
 </style>

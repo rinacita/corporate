@@ -15,6 +15,7 @@ a.button
   min-width: 140px;
   padding: 16px 24px;
   letter-spacing: 0.05em;
+  text-align: center;
   cursor: pointer;
   @include scaleHover();
   transition: 0.3s ease-in-out 0.1s;
@@ -35,6 +36,9 @@ a.button
       transform: translate3d(-7%, 0, 0) skewX(-30deg);
     }
     color: #fff;
+  }
+  @include mq(sm) {
+    min-width: 100%;
   }
 }
 .label {

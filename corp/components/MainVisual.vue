@@ -48,7 +48,11 @@
     margin-bottom: 0;
   }
   @include mq(sm) {
-    font-size: 40px;
+    font-size: 35px;
+    margin-bottom: 0;
+  }
+  @include mq(xs) {
+    font-size: 30px;
     margin-bottom: 0;
   }
 }
@@ -74,6 +78,10 @@
   @include mq(md) {
     font-size: 5rem;
   }
+  @include mq(sm) {
+    font-size: 2.8rem;
+    padding: 4px 12px;
+  }
 }
 .small {
   display: inline-block;
@@ -85,6 +93,10 @@
   white-space: nowrap;
   @include mq(md) {
     font-size: 1.8rem;
+  }
+  @include mq(sm) {
+    font-size: 1.2rem;
+    padding: 0 12px 4px;
   }
 }
 .wrapper {

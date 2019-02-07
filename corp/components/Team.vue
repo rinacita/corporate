@@ -100,6 +100,9 @@ export default {
     @include mq(md) {
       width: 30%;
     }
+    @include mq(sm) {
+      width: 47%;
+    }
     order: 1;
   }
   &::after {
@@ -109,12 +112,18 @@ export default {
     @include mq(md) {
       width: 30%;
     }
+    @include mq(sm) {
+      width: 47%;
+    }
   }
 }
 .mb64 {
   margin-bottom: 64px;
   @include mq(md) {
     margin-bottom: 48px;
+  }
+  @include mq(sm) {
+    margin-bottom: 32px;
   }
 }
 .margin-right {
@@ -129,6 +138,10 @@ export default {
   @include scaleHover();
   @include mq(md) {
     width: 30%;
+  }
+  @include mq(sm) {
+    width: 47%;
+    margin-bottom: 32px;
   }
 }
 .image {

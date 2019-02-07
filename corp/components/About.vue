@@ -52,12 +52,19 @@ export default {
     font-size: 3.2rem;
     margin-bottom: 40px;
   }
+  @include mq(sm) {
+    font-size: 2.4rem;
+    margin-bottom: 32px;
+  }
 }
 
 .about {
   font-size: 2.4rem;
   @include mq(md) {
     font-size: 1.8rem;
+  }
+  @include mq(sm) {
+    font-size: 1.4rem;
   }
 }
 

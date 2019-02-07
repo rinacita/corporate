@@ -40,6 +40,10 @@ export default {
   max-width: 1200px;
   margin: auto;
   padding: 0 48px;
+  @include mq(sm) {
+    flex-direction: column;
+    padding: 0 32px;
+  }
 }
 .info {
   width: 50%;
@@ -48,12 +52,20 @@ export default {
     width: 70%;
     margin: 120px 16px 120px 0;
   }
+  @include mq(sm) {
+    width: 100%;
+    margin: 80px 0 32px;
+  }
 }
 .logo {
   width: 200px;
   margin-bottom: 32px;
   @include mq(md) {
     width: 160px;
+  }
+  @include mq(sm) {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .text {
@@ -66,6 +78,9 @@ export default {
   max-width: 560px;
   @include mq(md) {
     left: 80px;
+  }
+  @include mq(sm) {
+    left: 12%;
   }
 }
 .override {
