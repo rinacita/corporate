@@ -63,10 +63,10 @@ export default {
   @include mq(md) {
     width: 160px;
   }
-  @include mq(sm) {
+  /* @include mq(sm) {
     margin-left: auto;
     margin-right: auto;
-  }
+  } */
 }
 .text {
   margin-bottom: 32px;
@@ -85,5 +85,8 @@ export default {
 }
 .override {
   margin-bottom: 48px;
+  @include mq(sm) {
+    margin-bottom: 32px;
+  }
 }
 </style>
