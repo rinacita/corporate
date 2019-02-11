@@ -38,7 +38,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '~/plugins/modal.js', ssr: false}
+    {src: '~/plugins/modal.js', ssr: false},
+    {src: '~/plugins/scrollLink.js'}
   ],
 
   /*

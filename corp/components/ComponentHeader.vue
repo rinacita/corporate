@@ -3,11 +3,11 @@ header
   a.logo(href='/')
     img(src='~/assets/img/logo.svg')
   .menu
-    a.link(v-for="item in items" :key="item.id" :href="'#' + item.link") {{item.title}}
+    a.link(v-for="item in items" :key="item.id" v-scroll-to="'#' + item.link") {{item.title}}
   .mobile-menu(@click="handleToggle" :class="{isOpen: this.isOpen}")
     hamburger(v-bind:isClose="isOpen" isMenu)
     .menu-wrap(v-if="isOpen")
-      a.link-mobile(v-for="item in items" :key="item.id" :href="'#' + item.link") {{item.title}}
+      a.link-mobile(v-for="item in items" :key="item.id" v-scroll-to="'#' + item.link") {{item.title}}
 </template>
 <script>
 import Hamburger from '~/components/atoms/Hamburger'
@@ -76,6 +76,7 @@ header {
   font-size: 1.8rem;
   position: relative;
   transition: 0.5s;
+  cursor: pointer;
   &::after {
     content: '';
     position: absolute;
