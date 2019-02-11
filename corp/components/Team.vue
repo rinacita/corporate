@@ -162,7 +162,11 @@ export default {
 }
 .modal {
   &-content {
+    max-width: 1000px;
+    width: 100%;
     height: 560px;
+    padding: 0;
+    margin: 48px;
     @include mq(md) {
       top: 0;
       left: 0;
