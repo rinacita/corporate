@@ -1,5 +1,5 @@
 <template lang="pug">
-header
+header(v-scroll="handleScroll")
   a.logo(href='/')
     img(src='~/assets/img/logo.svg')
   .menu
@@ -10,6 +10,7 @@ header
       a.link-mobile(v-for="item in items" :key="item.id" v-scroll-to="'#' + item.link") {{item.title}}
 </template>
 <script>
+import { TweenMax } from 'gsap'
 import Hamburger from '~/components/atoms/Hamburger'
 import nav from '~/assets/data/nav.json'
 
@@ -26,6 +27,22 @@ export default {
   methods: {
     handleToggle() {
       this.isOpen = !this.isOpen
+    },
+    handleScroll: function(evt, el) {
+      console.log(window.scrollY)
+      if (window.scrollY > 50) {
+        TweenMax.fromTo(
+          el,
+          0.3,
+          {
+            opacity: 0
+          },
+          {
+            opacity: 1
+          }
+        )
+      }
+      return window.scrollY > 100
     }
   }
 }
