@@ -1,13 +1,13 @@
 <template lang="pug">
 container(:id="sections[2].link")
-  section-title.mb64(align="center") {{sections[2].title}}
+  section-title.mb64 {{sections[2].title}}
   .flex
     .member(v-for="(member, index) in activeMembers" :key="member.id" @click="open(index)")
       .image
         img(:src="require('~/assets/img/' + member.image + '.jpg')")
       div
         .name {{member.name}}
-        tag(v-for="position in member.position").margin-right {{position}}
+        tag(v-for="position in member.position").margin-right.mobile {{position}}
   no-ssr
     modal(
       name='detail'
@@ -27,13 +27,13 @@ container(:id="sections[2].link")
                 a.sns(v-if="members[modalIndex].facebook" :href="'https://www.facebook.com/' + members[modalIndex].facebook" target="blank")
                   i.fab.fa-facebook
             p.modal-text(v-if="members[modalIndex].history") {{members[modalIndex].history}}
-          .direction
-            button.direction-item(@click="previous")
-              i.fas.fa-angle-left
-            button.direction-item(@click="next")
-              i.fas.fa-angle-right
-          .close(@click="close")
-            hamburger(isClose)
+        .direction
+          button.direction-item(@click="previous")
+            i.fas.fa-angle-left
+          button.direction-item(@click="next")
+            i.fas.fa-angle-right
+        .close(@click="close")
+          hamburger(isClose)
 </template>
 <script>
 import Container from '~/components/atoms/Container'
@@ -100,6 +100,9 @@ export default {
     @include mq(md) {
       width: 30%;
     }
+    @include mq(sm) {
+      width: 47%;
+    }
     order: 1;
   }
   &::after {
@@ -109,12 +112,18 @@ export default {
     @include mq(md) {
       width: 30%;
     }
+    @include mq(sm) {
+      width: 47%;
+    }
   }
 }
 .mb64 {
   margin-bottom: 64px;
   @include mq(md) {
     margin-bottom: 48px;
+  }
+  @include mq(sm) {
+    margin-bottom: 32px;
   }
 }
 .margin-right {
@@ -130,6 +139,10 @@ export default {
   @include mq(md) {
     width: 30%;
   }
+  @include mq(sm) {
+    width: 47%;
+    margin-bottom: 32px;
+  }
 }
 .image {
   width: 100%;
@@ -143,28 +156,64 @@ export default {
   @include mq(md) {
     font-size: 1.6rem;
   }
+  @include mq(sm) {
+    font-size: 1.4rem;
+  }
 }
 .modal {
+  &-content {
+    height: 560px;
+    @include mq(md) {
+      top: 0;
+      left: 0;
+      max-height: 90%;
+      height: 100%;
+    }
+    @include mq(sm) {
+      margin: 0;
+      max-height: 100%;
+    }
+  }
   &-inner {
     display: flex;
-    position: relative;
     background: #fff;
+    height: 100%;
+    @include mq(md) {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      flex-direction: column;
+    }
   }
   &-image {
     max-width: 40%;
     min-width: 40%;
+    overflow: hidden;
     img {
       height: 100%;
       object-fit: cover;
+      object-position: center center;
     }
-    /* @include mq(md) {
-      margin-bottom: 32px;
-    } */
+    @include mq(md) {
+      max-width: 100%;
+      min-height: 60%;
+      max-height: 60%;
+    }
+    @include mq(sm) {
+      min-height: 300px;
+      max-height: 300px;
+    }
   }
   &-info {
-    display: flex;
-    flex-direction: column;
     padding: 64px 64px 80px;
+    height: 100%;
+    overflow: auto;
+    @include mq(md) {
+      overflow: visible;
+    }
+    @include mq(sm) {
+      overflow: visible;
+      padding: 7.5% 7.5% 80px;
+    }
   }
   &-name {
     font-size: 2.4rem;
@@ -210,9 +259,10 @@ export default {
   position: absolute;
   top: 4px;
   right: 4px;
+  background: #fff;
 }
 .sns {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-left: 16px;
   color: $black;
   &:first-child {
@@ -225,5 +275,8 @@ export default {
 .override {
   font-size: 1.4rem;
   padding: 6px;
+}
+.mobile {
+  font-size: 1rem;
 }
 </style>

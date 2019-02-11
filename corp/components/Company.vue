@@ -1,6 +1,6 @@
 <template lang="pug">
 container(:id="sections[4].link")
-  section-title(align='center') {{sections[4].title}}
+  section-title {{sections[4].title}}
   .wrapper
     .item
       .title 会社名
@@ -57,6 +57,10 @@ export default {
   font-weight: 900;
   @include mq(md) {
     font-size: 1.6rem;
+  }
+  @include mq(sm) {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
   }
 }
 </style>

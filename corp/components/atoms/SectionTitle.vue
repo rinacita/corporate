@@ -1,15 +1,11 @@
 <template lang="pug">
-.align(:style="{ textAlign: this.align }")
+.align
   .section-title(:class="{ white: this.isWhite }")
     slot
 </template>
 <script>
 export default {
   props: {
-    align: {
-      type: String,
-      default: 'left'
-    },
     isWhite: {
       type: Boolean,
       default: false
@@ -22,6 +18,7 @@ export default {
 @import '~/assets/css/variables.scss';
 .align {
   margin-bottom: 32px;
+  text-align: center;
 }
 .section-title {
   display: inline-block;

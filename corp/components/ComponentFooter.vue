@@ -22,6 +22,9 @@ footer {
   @include mq(md) {
     padding: 60px 24px;
   }
+  @include mq(sm) {
+    padding: 32px 24px;
+  }
 }
 .wrapper {
   display: inline-flex;
@@ -29,6 +32,9 @@ footer {
 }
 .link {
   margin-left: 64px;
+  @include mq(sm) {
+    margin-left: 32px;
+  }
 }
 .sns {
   font-size: 1.2em;

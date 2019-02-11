@@ -1,6 +1,6 @@
 <template lang="pug">
 container(:id="sections[0].link")
-  section-title.mb64 {{sections[0].title}}
+  section-title.mb64.align {{sections[0].title}}
   h3.big-copy ありのまま生きろ。
     br
     | 夢を追い求めろ。
@@ -52,12 +52,19 @@ export default {
     font-size: 3.2rem;
     margin-bottom: 40px;
   }
+  @include mq(sm) {
+    font-size: 2.4rem;
+    margin-bottom: 32px;
+  }
 }
 
 .about {
   font-size: 2.4rem;
   @include mq(md) {
     font-size: 1.8rem;
+  }
+  @include mq(sm) {
+    font-size: 1.4rem;
   }
 }
 
@@ -66,5 +73,8 @@ export default {
   @include mq(md) {
     margin-bottom: 32px;
   }
+}
+.align {
+  text-align: left;
 }
 </style>

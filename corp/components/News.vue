@@ -1,7 +1,7 @@
 <template lang="pug">
 .back(:id="sections[3].link")
   .news
-    section-title.mb64(align='center') {{sections[3].title}}
+    section-title.mb64 {{sections[3].title}}
     .wrapper
       a.item(v-for="newsItem in activeNewsItems" :key="newsItem.id" :href="newsItem.link" target="blank")
         tag.override {{newsItem.date}}
@@ -49,6 +49,9 @@ export default {
   @include mq(md) {
     padding: 120px 24px;
   }
+  @include mq(sm) {
+    padding: 64px 24px;
+  }
 }
 .news {
   display: inline-block;
@@ -59,6 +62,9 @@ export default {
   @include mq(md) {
     padding: 60px;
   }
+  @include mq(sm) {
+    padding: 32px 24px 48px;
+  }
 }
 .item {
   display: flex;
@@ -68,12 +74,22 @@ export default {
     margin-bottom: 0;
   }
   @include scaleHover();
+  @include mq(sm) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .override {
   display: flex;
   align-items: center;
   padding: 8px 12px;
   margin-right: 16px;
+  @include mq(sm) {
+    font-size: 1rem;
+    padding: 6px;
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
 }
 .text {
   padding-top: 1px;
@@ -83,7 +99,7 @@ export default {
   @include mq(md) {
     margin-bottom: 48px;
   }
-  @include mq(xs) {
+  @include mq(sm) {
     margin-bottom: 32px;
   }
 }
