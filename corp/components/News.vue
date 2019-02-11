@@ -1,7 +1,7 @@
 <template lang="pug">
 .back(:id="sections[3].link")
   .news
-    section-title.mb64(align='center') {{sections[3].title}}
+    section-title.mb64 {{sections[3].title}}
     .wrapper
       a.item(v-for="newsItem in activeNewsItems" :key="newsItem.id" :href="newsItem.link" target="blank")
         tag.override {{newsItem.date}}

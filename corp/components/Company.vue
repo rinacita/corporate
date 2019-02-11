@@ -1,6 +1,6 @@
 <template lang="pug">
 container(:id="sections[4].link")
-  section-title(align='center') {{sections[4].title}}
+  section-title {{sections[4].title}}
   .wrapper
     .item
       .title 会社名

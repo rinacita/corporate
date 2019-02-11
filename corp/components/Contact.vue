@@ -1,7 +1,7 @@
 <template lang="pug">
 .back(:id="sections[5].link")
   .wrapper
-    section-title(align='center' isWhite) {{sections[5].title}}
+    section-title(isWhite) {{sections[5].title}}
     p.text 共催・提携や取材のご依頼、採用に関するお問い合わせは下記よりお気軽にお問い合わせください。
       br
       | お問い合わせ内容の確認後、担当者よりご連絡させて頂きます。

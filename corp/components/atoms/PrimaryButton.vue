@@ -13,6 +13,7 @@ a.button
   background: $yellow;
   white-space: nowrap;
   min-width: 140px;
+  max-width: 400px;
   padding: 16px 24px;
   letter-spacing: 0.05em;
   text-align: center;
@@ -38,7 +39,7 @@ a.button
     color: #fff;
   }
   @include mq(sm) {
-    min-width: 100%;
+    width: 100%;
   }
 }
 .label {

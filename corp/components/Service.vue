@@ -55,6 +55,7 @@ export default {
   @include mq(sm) {
     width: 100%;
     margin: 80px 0 32px;
+    text-align: center;
   }
 }
 .logo {
@@ -62,11 +63,12 @@ export default {
   margin-bottom: 32px;
   @include mq(md) {
     width: 160px;
+    margin-bottom: 24px;
   }
-  /* @include mq(sm) {
+  @include mq(sm) {
     margin-left: auto;
     margin-right: auto;
-  } */
+  }
 }
 .text {
   margin-bottom: 32px;
@@ -85,8 +87,10 @@ export default {
 }
 .override {
   margin-bottom: 48px;
+  text-align: left;
   @include mq(sm) {
     margin-bottom: 32px;
+    text-align: center;
   }
 }
 </style>
