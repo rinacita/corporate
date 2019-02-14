@@ -68,5 +68,5 @@
 .modal-content-enter,
 .modal-content-leave-active {
   opacity: 0;
-  transform: translateY(-50px);
+  transform: translate3d(0, 50px, 0);
 }

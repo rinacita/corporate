@@ -1,5 +1,5 @@
 <template lang="pug">
-header(v-scroll="handleScroll")
+header(v-scroll="handleScroll" :class="{isScroll: this.isScroll}")
   a.logo(href='/')
     img(src='~/assets/img/logo.svg')
   .menu
@@ -21,7 +21,8 @@ export default {
   data: () => {
     return {
       items: nav,
-      isOpen: false
+      isOpen: false,
+      isScroll: false
     }
   },
   methods: {
@@ -29,20 +30,7 @@ export default {
       this.isOpen = !this.isOpen
     },
     handleScroll: function(evt, el) {
-      console.log(window.scrollY)
-      if (window.scrollY > 50) {
-        TweenMax.fromTo(
-          el,
-          0.3,
-          {
-            opacity: 0
-          },
-          {
-            opacity: 1
-          }
-        )
-      }
-      return window.scrollY > 100
+      window.scrollY > 0 ? (this.isScroll = true) : (this.isScroll = false)
     }
   }
 }
@@ -59,13 +47,18 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 500;
+  background: rgba(255, 255, 255, 0);
+  transition: 0.3s;
   @include mq(lg) {
     padding: 24px;
   }
   @include mq(sm) {
     padding: 12px 12px 12px 24px;
   }
+}
+.isScroll {
+  background: rgba(255, 255, 255, 1);
 }
 .logo {
   width: 150px;
@@ -94,6 +87,10 @@ header {
   position: relative;
   transition: 0.5s;
   cursor: pointer;
+  text-shadow: #fff 2px 0px, #fff -2px 0px, #fff 0px -2px, #fff 0px 2px,
+    #fff 2px 2px, #fff -2px 2px, #fff 2px -2px, #fff -2px -2px, #fff 1px 2px,
+    #fff -1px 2px, #fff 1px -2px, #fff -1px -2px, #fff 2px 1px, #fff -2px 1px,
+    #fff 2px -1px, #fff -2px -1px;
   &::after {
     content: '';
     position: absolute;
