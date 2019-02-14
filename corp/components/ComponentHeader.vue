@@ -6,8 +6,9 @@ header(v-scroll="handleScroll" :class="{isScroll: this.isScroll}")
     a.link(v-for="item in items" :key="item.id" v-scroll-to="'#' + item.link") {{item.title}}
   .mobile-menu(@click="handleToggle" :class="{isOpen: this.isOpen}")
     hamburger(v-bind:isClose="isOpen" isMenu)
-    .menu-wrap(v-if="isOpen")
-      a.link-mobile(v-for="item in items" :key="item.id" v-scroll-to="'#' + item.link") {{item.title}}
+    transition(name="open-animation")
+      .menu-wrap(v-if="isOpen")
+        a.link-mobile(v-for="item in items" :key="item.id" v-scroll-to="'#' + item.link") {{item.title}}
 </template>
 <script>
 import { TweenMax } from 'gsap'
@@ -130,6 +131,7 @@ header {
   font-family: futura-pt-bold;
   font-weight: 700;
   font-style: italic;
+  transform-origin: top right;
 }
 .link-mobile {
   display: block;
@@ -143,6 +145,23 @@ header {
 .closeIcon {
   .bar {
     background: #fff;
+  }
+}
+.open-animation {
+  &-enter-active {
+    transition: 0.3s ease-out;
+    transition-delay: 0.05s;
+  }
+  &-leave-active {
+    transition: 0.1s ease-out;
+  }
+  &-enter,
+  &-leave-to {
+    transform: scale3d(0, 0, 1);
+  }
+  &-enter-to,
+  &-leave {
+    transform: scale3d(1, 1, 1);
   }
 }
 </style>
