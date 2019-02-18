@@ -48,9 +48,13 @@ export default {
 .info {
   width: 50%;
   margin: 200px 48px 200px 0;
+  @include mq(lg) {
+    width: 60%;
+    margin-right: 0;
+  }
   @include mq(md) {
     width: 70%;
-    margin: 120px 16px 120px 0;
+    margin: 80px 16px 80px 0;
   }
   @include mq(sm) {
     width: 100%;
@@ -78,6 +82,9 @@ export default {
   left: 130px;
   margin-top: 32px;
   max-width: 560px;
+  @include mq(lg) {
+    left: 100px;
+  }
   @include mq(md) {
     left: 80px;
   }

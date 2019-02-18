@@ -15,6 +15,7 @@ container(:id="sections[2].link")
     )
       div
         .modal-inner
+          .transition-cover
           .modal-image
             img(:src="require('~/assets/img/' + members[modalIndex].image + '.jpg')")
           .modal-info
@@ -36,6 +37,7 @@ container(:id="sections[2].link")
           hamburger(isClose)
 </template>
 <script>
+import { TweenMax } from 'gsap'
 import Container from '~/components/atoms/Container'
 import SectionTitle from '~/components/atoms/SectionTitle'
 import Tag from '~/components/atoms/Tag'
@@ -78,10 +80,37 @@ export default {
       }
     },
     next() {
-      const length = this.activeMembers.length - 1
-      if (this.modalIndex < length) {
-        this.modalIndex++
+      const calc = length => {
+        length = this.activeMembers.length - 1
+        if (this.modalIndex < length) {
+          this.modalIndex++
+        }
       }
+      const timeLine = new TimelineMax()
+      timeLine
+        .fromTo(
+          '.transition-cover',
+          0.4,
+          {
+            xPercent: 0
+          },
+          {
+            xPercent: 100
+          }
+        )
+        .set('.transition-cover', {
+          onComplete: calc
+        })
+        .fromTo(
+          '.transition-cover',
+          0.4,
+          {
+            xPercent: 100
+          },
+          {
+            xPercent: 200
+          }
+        )
     }
   }
 }
@@ -167,6 +196,7 @@ export default {
     height: 560px;
     padding: 0;
     margin: 48px;
+    overflow-x: hidden;
     @include mq(md) {
       top: 0;
       left: 0;
@@ -183,7 +213,7 @@ export default {
     background: #fff;
     height: 100%;
     @include mq(md) {
-      overflow: auto;
+      overflow-y: auto;
       -webkit-overflow-scrolling: touch;
       flex-direction: column;
     }
@@ -282,5 +312,13 @@ export default {
 }
 .mobile {
   font-size: 1rem;
+}
+.transition-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: -100%;
 }
 </style>

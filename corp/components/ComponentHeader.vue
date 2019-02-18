@@ -11,7 +11,6 @@ header(v-scroll="handleScroll" :class="{isScroll: this.isScroll}")
         a.link-mobile(v-for="item in items" :key="item.id" v-scroll-to="'#' + item.link") {{item.title}}
 </template>
 <script>
-import { TweenMax } from 'gsap'
 import Hamburger from '~/components/atoms/Hamburger'
 import nav from '~/assets/data/nav.json'
 
