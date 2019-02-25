@@ -15,7 +15,7 @@ container(:id="sections[2].link")
     )
       div
         .modal-inner
-          .transition-cover
+          //- .transition-cover
           .modal-image
             img(:src="require('~/assets/img/' + members[modalIndex].image + '.jpg')")
           .modal-info
@@ -66,6 +66,11 @@ export default {
       })
     }
   },
+  updated() {
+    TweenMax.to('.modal-inner', 0.4, {
+      opacity: 1
+    })
+  },
   methods: {
     open(index) {
       this.modalIndex = index
@@ -75,9 +80,16 @@ export default {
       this.$modal.pop()
     },
     previous() {
-      if (this.modalIndex > 0) {
-        this.modalIndex--
+      const calc = () => {
+        if (this.modalIndex > 0) {
+          this.modalIndex--
+        }
       }
+      const timeLine = new TimelineMax()
+      timeLine.to('.modal-inner', 0.4, {
+        opacity: 0,
+        onComplete: calc
+      })
     },
     next() {
       const calc = length => {
@@ -87,30 +99,10 @@ export default {
         }
       }
       const timeLine = new TimelineMax()
-      timeLine
-        .fromTo(
-          '.transition-cover',
-          0.4,
-          {
-            xPercent: 0
-          },
-          {
-            xPercent: 100
-          }
-        )
-        .set('.transition-cover', {
-          onComplete: calc
-        })
-        .fromTo(
-          '.transition-cover',
-          0.4,
-          {
-            xPercent: 100
-          },
-          {
-            xPercent: 200
-          }
-        )
+      timeLine.to('.modal-inner', 0.4, {
+        opacity: 0,
+        onComplete: calc
+      })
     }
   }
 }
