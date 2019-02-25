@@ -6,29 +6,63 @@
   .wrapper
     .top.flex
       .square(style='width: 2.55em')
-        img(src='~/assets/img/draw.jpg')
-      .square.black(style='width: 1.7em')
+        .cover
+        img.image(src='~/assets/img/draw.jpg')
+      .square(style='width: 1.7em')
+        .cover
+        .black.image
       .square(style='width: 2.08em')
-        img(src='~/assets/img/code.jpg')
+        .cover
+        img.image(src='~/assets/img/code.jpg')
       .square(style='width: 3em')
-        img(src='~/assets/img/camera.jpg')
+        .cover
+        img.image(src='~/assets/img/camera.jpg')
     .bottom.flex
       .left.flex
-        .square.yellow(style='width: 2.08em')
+        .square(style='width: 2.08em')
+          .cover
+          .yellow.image
         .square(style='width: 4.24em')
-          img(src='~/assets/img/live.jpg')
+          .cover
+          img.image(src='~/assets/img/live.jpg')
       .right.flex
         .right-top.flex
           .square(style='width: 3.16em')
-            img(src='~/assets/img/sticker.jpg')
+            .cover
+            img.image(src='~/assets/img/sticker.jpg')
           .square(style='width: 3.16em')
-            img(src='~/assets/img/load.jpg')
+            .cover
+            img.image(src='~/assets/img/load.jpg')
         .right-bottom.flex
           .square(style='width: 5em')
-            img(src='~/assets/img/studio.jpg')
+            .cover
+            img.image(src='~/assets/img/studio.jpg')
           .square(style='width: 3.55em')
-            img(src='~/assets/img/frontman.jpg')
+            .cover
+            img.image(src='~/assets/img/frontman.jpg')
 </template>
+<script>
+import { TweenMax } from 'gsap'
+
+export default {
+  mounted() {
+    console.log('test')
+    TweenMax.staggerFromTo(
+      '.cover',
+      0.4,
+      {
+        yPercent: 0
+      },
+      {
+        yPercent: 100,
+        ease: Expo.easeInOut
+      },
+      0.1
+    )
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 @import '~/assets/css/variables.scss';
 
@@ -112,9 +146,32 @@
 .square {
   width: 24.6785%;
   overflow: hidden;
+  position: relative;
   img {
     transform: scale(1.01);
+    /* opacity: 0; */
   }
+  /* &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: $black;
+    position: absolute;
+    top: 0;
+    left: 0;
+  } */
+}
+.image {
+  /* opacity: 0; */
+}
+.cover {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 .black {
   background: $black;
