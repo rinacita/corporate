@@ -1,63 +1,57 @@
 <template lang="pug">
 .mv
   .copy
-    h1.big COLOR THE WORLD
+    h1.big(data-splitting) COLOR THE WORLD
     p.small 感動とワクワクで世界を彩る
   .wrapper
     .top.flex
       .square(style='width: 2.55em')
-        .cover
-        img.image(src='~/assets/img/draw.jpg')
+        img.image(decoding='async' src='~/assets/img/draw.jpg')
       .square(style='width: 1.7em')
-        .cover
         .black.image
       .square(style='width: 2.08em')
-        .cover
-        img.image(src='~/assets/img/code.jpg')
+        img.image(decoding='async' src='~/assets/img/code.jpg')
       .square(style='width: 3em')
-        .cover
-        img.image(src='~/assets/img/camera.jpg')
+        img.image(decoding='async' src='~/assets/img/camera.jpg')
     .bottom.flex
       .left.flex
         .square(style='width: 2.08em')
-          .cover
           .yellow.image
         .square(style='width: 4.24em')
-          .cover
-          img.image(src='~/assets/img/live.jpg')
+          img.image(decoding='async' src='~/assets/img/live.jpg')
       .right.flex
         .right-top.flex
           .square(style='width: 3.16em')
-            .cover
-            img.image(src='~/assets/img/sticker.jpg')
+            img.image(decoding='async' src='~/assets/img/sticker.jpg')
           .square(style='width: 3.16em')
-            .cover
-            img.image(src='~/assets/img/load.jpg')
+            img.image(decoding='async' src='~/assets/img/load.jpg')
         .right-bottom.flex
           .square(style='width: 5em')
-            .cover
-            img.image(src='~/assets/img/studio.jpg')
+            img.image(decoding='async' src='~/assets/img/studio.jpg')
           .square(style='width: 3.55em')
-            .cover
-            img.image(src='~/assets/img/frontman.jpg')
+            img.image(decoding='async' src='~/assets/img/frontman.jpg')
 </template>
 <script>
 import { TweenMax } from 'gsap'
+import Splitting from 'splitting'
 
 export default {
+  beforeCreate() {
+    Splitting()
+  },
   mounted() {
+    Splitting()
     console.log('test')
-    TweenMax.staggerFromTo(
-      '.cover',
+    const timeLine = new TimelineMax()
+    timeLine.fromTo(
+      '.anime1',
       0.4,
       {
-        yPercent: 0
+        xPercent: -100
       },
       {
-        yPercent: 100,
-        ease: Expo.easeInOut
-      },
-      0.1
+        xPercent: 0
+      }
     )
   }
 }
@@ -148,7 +142,7 @@ export default {
   overflow: hidden;
   position: relative;
   img {
-    transform: scale(1.01);
+    /* transform: scale(1.01); */
     /* opacity: 0; */
   }
   /* &:after {
@@ -163,15 +157,6 @@ export default {
 }
 .image {
   /* opacity: 0; */
-}
-.cover {
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
 }
 .black {
   background: $black;

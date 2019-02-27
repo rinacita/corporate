@@ -53,7 +53,8 @@ module.exports = {
   plugins: [
     { src: '~/plugins/modal.js', ssr: false },
     { src: '~/plugins/scrollLink.js' },
-    { src: '~/plugins/scrollEvent.js' }
+    { src: '~/plugins/scrollEvent.js' },
+    { src: '~/plugins/wow.js' }
   ],
 
   /*
