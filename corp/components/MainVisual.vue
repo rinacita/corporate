@@ -1,8 +1,12 @@
 <template lang="pug">
 .mv
   .copy
-    h1.big(data-splitting) COLOR THE WORLD
-    p.small 感動とワクワクで世界を彩る
+    div.text-wrap#big
+      h1.big(data-splitting) COLOR THE WORLD
+      .text-bg
+    div.text-wrap#small
+      p.small(data-splitting) 感動とワクワクで世界を彩る
+      .text-bg
   .wrapper
     .top.flex
       .square(style='width: 2.55em')
@@ -33,26 +37,68 @@
 </template>
 <script>
 import { TweenMax } from 'gsap'
+import CSSRulePlugin from 'gsap/CSSRulePlugin'
 import Splitting from 'splitting'
+import { UAnimateContainer, UAnimate } from 'vue-wow'
 
 export default {
-  beforeCreate() {
-    Splitting()
+  components: {
+    UAnimateContainer,
+    UAnimate
   },
   mounted() {
     Splitting()
     console.log('test')
     const timeLine = new TimelineMax()
-    timeLine.fromTo(
-      '.anime1',
-      0.4,
-      {
-        xPercent: -100
-      },
-      {
-        xPercent: 0
-      }
-    )
+    timeLine
+      .add('big')
+      .add('small')
+      .fromTo(
+        '#big .text-bg',
+        0.8,
+        {
+          scaleX: 0
+        },
+        {
+          scaleX: 1
+        },
+        'big'
+      )
+      .staggerFromTo(
+        '.big .char',
+        0.4,
+        {
+          yPercent: 110
+        },
+        {
+          yPercent: 0
+        },
+        0.02,
+        'big+=0.4'
+      )
+      .fromTo(
+        '#small .text-bg',
+        0.8,
+        {
+          scaleX: 0
+        },
+        {
+          scaleX: 1
+        },
+        '-=0.6'
+      )
+      .staggerFromTo(
+        '.small .char',
+        0.4,
+        {
+          yPercent: 110
+        },
+        {
+          yPercent: 0
+        },
+        0.02,
+        '-=0.5'
+      )
   }
 }
 </script>
@@ -91,9 +137,11 @@ export default {
   transform: translate3d(-50%, -50%, 0);
   z-index: 100;
   text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  line-height: 0;
+}
+.text-wrap {
+  display: inline-block;
+  position: relative;
 }
 .big {
   font-family: futura-pt-bold;
@@ -101,7 +149,6 @@ export default {
   font-style: italic;
   font-size: 7rem;
   padding: 4px 24px;
-  background: #fff;
   white-space: nowrap;
   @include mq(md) {
     font-size: 5rem;
@@ -116,7 +163,6 @@ export default {
   font-size: 2.4rem;
   font-weight: 900;
   padding: 0 24px 4px;
-  background: #fff;
   letter-spacing: 0.08em;
   white-space: nowrap;
   @include mq(md) {
@@ -126,6 +172,16 @@ export default {
     font-size: 1.2rem;
     padding: 0 12px 4px;
   }
+}
+.text-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transform-origin: left;
 }
 .wrapper {
   display: inline-flex;

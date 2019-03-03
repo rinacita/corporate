@@ -124,8 +124,10 @@ img,video {
 .splitting .char {
   display: inline-flex;
 }
-.char {
+.section-title {
+  .char {
     transform: translate3d(0, 110%, 0);
+  }
 }
 .text-animation {
   .char {
