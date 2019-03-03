@@ -96,7 +96,7 @@ a{
     transition: .3s;
 }
 a:hover{
-	text-decoration:none;
+  text-decoration:none;
 }
 .clearfix:after {
     content: "";
@@ -123,4 +123,16 @@ img,video {
 .splitting .word,
 .splitting .char {
   display: inline-flex;
+}
+.section-title {
+  .char {
+    transform: translate3d(0, 110%, 0);
+  }
+}
+.text-animation {
+  .char {
+    transition: 0.6s;
+    transform: translate3d(0, 0, 0);
+    transition-delay: calc(var(--char-index) * 0.02s);
+  }
 }

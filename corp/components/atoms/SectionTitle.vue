@@ -1,15 +1,26 @@
 <template lang="pug">
-.align
-  .section-title(:class="{ white: this.isWhite }")
-    slot
+u-animate-container.align
+  u-animate(name="text-animation" :offset="100")
+    .section-title(:class="{ white: this.isWhite }" data-splitting)
+      slot
 </template>
 <script>
+import { UAnimateContainer, UAnimate } from 'vue-wow'
+import Splitting from 'splitting'
+
 export default {
+  components: {
+    UAnimateContainer,
+    UAnimate
+  },
   props: {
     isWhite: {
       type: Boolean,
       default: false
     }
+  },
+  mounted() {
+    Splitting()
   }
 }
 </script>
@@ -37,6 +48,9 @@ export default {
     width: 100%;
     height: 3px;
     background: $black;
+    transition: 0.6s;
+    transform: scale3d(0, 1, 1);
+    transform-origin: left;
   }
   @include mq(md) {
     font-size: 2.4rem;
@@ -46,6 +60,11 @@ export default {
   color: #fff;
   &::after {
     background: #fff;
+  }
+}
+.text-animation {
+  .section-title::after {
+    transform: scale3d(1, 1, 1);
   }
 }
 </style>

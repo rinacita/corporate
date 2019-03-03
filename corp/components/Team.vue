@@ -15,6 +15,7 @@ container(:id="sections[2].link")
     )
       div
         .modal-inner
+          //- .transition-cover
           .modal-image
             img(:src="require('~/assets/img/' + members[modalIndex].image + '.jpg')")
           .modal-info
@@ -36,6 +37,7 @@ container(:id="sections[2].link")
           hamburger(isClose)
 </template>
 <script>
+import { TweenMax } from 'gsap'
 import Container from '~/components/atoms/Container'
 import SectionTitle from '~/components/atoms/SectionTitle'
 import Tag from '~/components/atoms/Tag'
@@ -64,6 +66,11 @@ export default {
       })
     }
   },
+  updated() {
+    TweenMax.to('.modal-inner', 0.4, {
+      opacity: 1
+    })
+  },
   methods: {
     open(index) {
       this.modalIndex = index
@@ -73,15 +80,29 @@ export default {
       this.$modal.pop()
     },
     previous() {
-      if (this.modalIndex > 0) {
-        this.modalIndex--
+      const calc = () => {
+        if (this.modalIndex > 0) {
+          this.modalIndex--
+        }
       }
+      const timeLine = new TimelineMax()
+      timeLine.to('.modal-inner', 0.4, {
+        opacity: 0,
+        onComplete: calc
+      })
     },
     next() {
-      const length = this.activeMembers.length - 1
-      if (this.modalIndex < length) {
-        this.modalIndex++
+      const calc = length => {
+        length = this.activeMembers.length - 1
+        if (this.modalIndex < length) {
+          this.modalIndex++
+        }
       }
+      const timeLine = new TimelineMax()
+      timeLine.to('.modal-inner', 0.4, {
+        opacity: 0,
+        onComplete: calc
+      })
     }
   }
 }
@@ -162,7 +183,12 @@ export default {
 }
 .modal {
   &-content {
+    max-width: 1000px;
+    width: 100%;
     height: 560px;
+    padding: 0;
+    margin: 48px;
+    overflow-x: hidden;
     @include mq(md) {
       top: 0;
       left: 0;
@@ -179,7 +205,7 @@ export default {
     background: #fff;
     height: 100%;
     @include mq(md) {
-      overflow: auto;
+      overflow-y: auto;
       -webkit-overflow-scrolling: touch;
       flex-direction: column;
     }
@@ -278,5 +304,13 @@ export default {
 }
 .mobile {
   font-size: 1rem;
+}
+.transition-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: -100%;
 }
 </style>

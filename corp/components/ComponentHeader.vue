@@ -1,13 +1,14 @@
 <template lang="pug">
-header
+header(v-scroll="handleScroll" :class="{isScroll: this.isScroll}")
   a.logo(href='/')
     img(src='~/assets/img/logo.svg')
   .menu
-    a.link(v-for="item in items" :key="item.id" :href="'#' + item.link") {{item.title}}
+    a.link(v-for="item in items" :key="item.id" v-scroll-to="'#' + item.link") {{item.title}}
   .mobile-menu(@click="handleToggle" :class="{isOpen: this.isOpen}")
     hamburger(v-bind:isClose="isOpen" isMenu)
-    .menu-wrap(v-if="isOpen")
-      a.link-mobile(v-for="item in items" :key="item.id" :href="'#' + item.link") {{item.title}}
+    transition(name="open-animation")
+      .menu-wrap(v-if="isOpen")
+        a.link-mobile(v-for="item in items" :key="item.id" v-scroll-to="'#' + item.link") {{item.title}}
 </template>
 <script>
 import Hamburger from '~/components/atoms/Hamburger'
@@ -20,12 +21,16 @@ export default {
   data: () => {
     return {
       items: nav,
-      isOpen: false
+      isOpen: false,
+      isScroll: false
     }
   },
   methods: {
     handleToggle() {
       this.isOpen = !this.isOpen
+    },
+    handleScroll: function(evt, el) {
+      window.scrollY > 0 ? (this.isScroll = true) : (this.isScroll = false)
     }
   }
 }
@@ -42,13 +47,18 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 500;
+  background: rgba(255, 255, 255, 0);
+  transition: 0.3s;
   @include mq(lg) {
     padding: 24px;
   }
   @include mq(sm) {
     padding: 12px 12px 12px 24px;
   }
+}
+.isScroll {
+  background: rgba(255, 255, 255, 1);
 }
 .logo {
   width: 150px;
@@ -76,6 +86,11 @@ header {
   font-size: 1.8rem;
   position: relative;
   transition: 0.5s;
+  cursor: pointer;
+  text-shadow: #fff 2px 0px, #fff -2px 0px, #fff 0px -2px, #fff 0px 2px,
+    #fff 2px 2px, #fff -2px 2px, #fff 2px -2px, #fff -2px -2px, #fff 1px 2px,
+    #fff -1px 2px, #fff 1px -2px, #fff -1px -2px, #fff 2px 1px, #fff -2px 1px,
+    #fff 2px -1px, #fff -2px -1px;
   &::after {
     content: '';
     position: absolute;
@@ -115,6 +130,7 @@ header {
   font-family: futura-pt-bold;
   font-weight: 700;
   font-style: italic;
+  transform-origin: top right;
 }
 .link-mobile {
   display: block;
@@ -128,6 +144,23 @@ header {
 .closeIcon {
   .bar {
     background: #fff;
+  }
+}
+.open-animation {
+  &-enter-active {
+    transition: 0.3s ease-out;
+    transition-delay: 0.05s;
+  }
+  &-leave-active {
+    transition: 0.1s ease-out;
+  }
+  &-enter,
+  &-leave-to {
+    transform: scale3d(0, 0, 1);
+  }
+  &-enter-to,
+  &-leave {
+    transform: scale3d(1, 1, 1);
   }
 }
 </style>

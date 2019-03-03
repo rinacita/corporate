@@ -11,14 +11,29 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'initial-scale=1, viewport-fit=cover' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://use.typekit.net/fcu2hbe.css' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;subset=japanese' },
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/yakuhanjp@3.0.0/dist/css/yakuhanjp.min.css' },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', integrity: 'sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/', crossorigin: 'anonymous' }
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;subset=japanese'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdn.jsdelivr.net/npm/yakuhanjp@3.0.0/dist/css/yakuhanjp.min.css'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css',
+        integrity:
+          'sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/',
+        crossorigin: 'anonymous'
+      }
     ]
   },
 
@@ -30,15 +45,16 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [
-    '@/assets/css/common.scss'
-  ],
+  css: ['@/assets/css/common.scss'],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '~/plugins/modal.js', ssr: false}
+    { src: '~/plugins/modal.js', ssr: false },
+    { src: '~/plugins/scrollLink.js' },
+    { src: '~/plugins/scrollEvent.js' },
+    { src: '~/plugins/wow.js' }
   ],
 
   /*
