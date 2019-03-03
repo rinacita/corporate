@@ -53,6 +53,17 @@ export default {
     timeLine
       .add('big')
       .add('small')
+      .staggerFromTo(
+        '.square',
+        0.4,
+        {
+          scale: 0
+        },
+        {
+          scale: 1
+        },
+        0.04
+      )
       .fromTo(
         '#big .text-bg',
         0.8,
@@ -60,9 +71,10 @@ export default {
           scaleX: 0
         },
         {
-          scaleX: 1
+          scaleX: 1,
+          ease: Power2.easeInOut
         },
-        'big'
+        '-=0.3'
       )
       .staggerFromTo(
         '.big .char',
@@ -74,7 +86,7 @@ export default {
           yPercent: 0
         },
         0.02,
-        'big+=0.4'
+        '-=0.5'
       )
       .fromTo(
         '#small .text-bg',
@@ -83,7 +95,8 @@ export default {
           scaleX: 0
         },
         {
-          scaleX: 1
+          scaleX: 1,
+          ease: Power2.easeInOut
         },
         '-=0.6'
       )
