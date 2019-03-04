@@ -9,30 +9,30 @@
       .text-bg
   .wrapper
     .top.flex
-      .square(style='width: 2.55em')
+      .square.anime2(style='width: 2.55em')
         img.image(decoding='async' src='~/assets/img/draw.jpg')
-      .square(style='width: 1.7em')
+      .square.anime1(style='width: 1.7em')
         .black.image
-      .square(style='width: 2.08em')
+      .square.anime2(style='width: 2.08em')
         img.image(decoding='async' src='~/assets/img/code.jpg')
-      .square(style='width: 3em')
+      .square.anime1(style='width: 3em')
         img.image(decoding='async' src='~/assets/img/camera.jpg')
     .bottom.flex
       .left.flex
-        .square(style='width: 2.08em')
+        .square.anime2(style='width: 2.08em')
           .yellow.image
-        .square(style='width: 4.24em')
+        .square.anime1(style='width: 4.24em')
           img.image(decoding='async' src='~/assets/img/live.jpg')
       .right.flex
         .right-top.flex
-          .square(style='width: 3.16em')
+          .square.anime1(style='width: 3.16em')
             img.image(decoding='async' src='~/assets/img/sticker.jpg')
-          .square(style='width: 3.16em')
+          .square.anime1(style='width: 3.16em')
             img.image(decoding='async' src='~/assets/img/load.jpg')
         .right-bottom.flex
-          .square(style='width: 5em')
+          .square.anime2(style='width: 5em')
             img.image(decoding='async' src='~/assets/img/studio.jpg')
-          .square(style='width: 3.55em')
+          .square.anime2(style='width: 3.55em')
             img.image(decoding='async' src='~/assets/img/frontman.jpg')
 </template>
 <script>
@@ -54,15 +54,29 @@ export default {
       .add('big')
       .add('small')
       .staggerFromTo(
-        '.square',
-        0.4,
+        '.anime1',
+        0.8,
         {
           scale: 0
         },
         {
-          scale: 1
+          scale: 1,
+          ease: Power4.easeInOut
         },
-        0.04
+        0.05
+      )
+      .staggerFromTo(
+        '.anime2',
+        0.8,
+        {
+          scale: 0
+        },
+        {
+          scale: 1,
+          ease: Power4.easeInOut
+        },
+        0.05,
+        '-=0.6'
       )
       .fromTo(
         '#big .text-bg',
@@ -74,7 +88,7 @@ export default {
           scaleX: 1,
           ease: Power2.easeInOut
         },
-        '-=0.3'
+        '-=0.5'
       )
       .staggerFromTo(
         '.big .char',
