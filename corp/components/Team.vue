@@ -29,9 +29,9 @@ container(:id="sections[2].link")
                   i.fab.fa-facebook
             p.modal-text(v-if="members[modalIndex].history") {{members[modalIndex].history}}
         .direction
-          button.direction-item(@click="previous")
+          button.direction-item(@click="previous" v-if="this.modalIndex > 0")
             i.fas.fa-angle-left
-          button.direction-item(@click="next")
+          button.direction-item(@click="next" v-if="this.modalIndex < this.activeMembers.length - 1")
             i.fas.fa-angle-right
         .close(@click="close")
           hamburger(isClose)
@@ -94,9 +94,7 @@ export default {
     next() {
       const calc = length => {
         length = this.activeMembers.length - 1
-        if (this.modalIndex < length) {
-          this.modalIndex++
-        }
+        this.modalIndex++
       }
       const timeLine = new TimelineMax()
       timeLine.to('.modal-inner', 0.4, {
