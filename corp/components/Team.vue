@@ -8,33 +8,28 @@ container(:id="sections[2].link")
       div
         .name {{member.name}}
         tag(v-for="position in member.position").margin-right.mobile {{position}}
-  no-ssr
-    modal(
-      name='detail'
-      pre-mount=true
+  el-dialog(:visible.sync="dialogVisible")
+    el-carousel(
+      :autoplay="false"
+      arrow="always"
+      ref="carousel"
+      :initial-index="modalIndex"
     )
-      div
+      el-carousel-item(v-for="(member, index) in activeMembers" :key="member.id" name="index")
         .modal-inner
           //- .transition-cover
           .modal-image
-            img(:src="require('~/assets/img/' + members[modalIndex].image + '.jpg')")
+            img(:src="require('~/assets/img/' + member.image + '.jpg')")
           .modal-info
             .modal-top
-              .modal-name {{members[modalIndex].name}}
-              tag.override(v-for="position in members[modalIndex].position").margin-right {{position}}
+              .modal-name {{member.name}}
+              tag.override(v-for="position in member.position").margin-right {{position}}
               .modal-link
-                a.sns(v-if="members[modalIndex].twitter" :href="'https://twitter.com/' + members[modalIndex].twitter" target="blank")
+                a.sns(v-if="member.twitter" :href="'https://twitter.com/' + member.twitter" target="blank")
                   i.fab.fa-twitter
-                a.sns(v-if="members[modalIndex].facebook" :href="'https://www.facebook.com/' + members[modalIndex].facebook" target="blank")
+                a.sns(v-if="member.facebook" :href="'https://www.facebook.com/' + member.facebook" target="blank")
                   i.fab.fa-facebook
-            p.modal-text(v-if="members[modalIndex].history") {{members[modalIndex].history}}
-        .direction
-          button.direction-item(@click="previous" v-if="this.modalIndex > 0")
-            i.fas.fa-angle-left
-          button.direction-item(@click="next" v-if="this.modalIndex < this.activeMembers.length - 1")
-            i.fas.fa-angle-right
-        .close(@click="close")
-          hamburger(isClose)
+            p.modal-text(v-if="member.history") {{member.history}}
 </template>
 <script>
 import { TweenMax } from 'gsap'
@@ -56,7 +51,8 @@ export default {
     return {
       members: teamData,
       modalIndex: 0,
-      sections: nav
+      sections: nav,
+      dialogVisible: false
     }
   },
   computed: {
@@ -67,47 +63,21 @@ export default {
     }
   },
   updated() {
-    TweenMax.to('.modal-inner', 0.4, {
-      opacity: 1
-    })
+    this.setActiveItem(this.modalIndex)
   },
   methods: {
+    setActiveItem(index) {
+      this.$refs.carousel.setActiveItem(index)
+    },
     open(index) {
       this.modalIndex = index
-      this.$modal.push('detail')
-    },
-    close() {
-      this.$modal.pop()
-    },
-    previous() {
-      const calc = () => {
-        if (this.modalIndex > 0) {
-          this.modalIndex--
-        }
-      }
-      const timeLine = new TimelineMax()
-      timeLine.to('.modal-inner', 0.4, {
-        opacity: 0,
-        onComplete: calc
-      })
-    },
-    next() {
-      const calc = length => {
-        length = this.activeMembers.length - 1
-        this.modalIndex++
-      }
-      const timeLine = new TimelineMax()
-      timeLine.to('.modal-inner', 0.4, {
-        opacity: 0,
-        onComplete: calc
-      })
+      this.dialogVisible = true
     }
   }
 }
 </script>
 <style lang="scss" scoped>
 @import '~/assets/css/variables.scss';
-
 .flex {
   display: flex;
   justify-content: space-between;

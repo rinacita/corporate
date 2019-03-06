@@ -136,3 +136,9 @@ img,video {
     transition-delay: calc(var(--char-index) * 0.02s);
   }
 }
+.el-carousel__indicators {
+  display: none;
+}
+.el-carousel__container {
+  height: 560px !important;
+}

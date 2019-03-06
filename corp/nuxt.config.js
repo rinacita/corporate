@@ -45,7 +45,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['@/assets/css/common.scss'],
+  css: ['@/assets/css/common.scss', 'element-ui/lib/theme-chalk/index.css'],
 
   /*
   ** Plugins to load before mounting the App
@@ -54,7 +54,8 @@ module.exports = {
     { src: '~/plugins/modal.js', ssr: false },
     { src: '~/plugins/scrollLink.js' },
     { src: '~/plugins/scrollEvent.js' },
-    { src: '~/plugins/wow.js' }
+    { src: '~/plugins/wow.js' },
+    { src: '~/plugins/element-ui.js' }
   ],
 
   /*
@@ -78,6 +79,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    vendor: ['element-ui'],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
