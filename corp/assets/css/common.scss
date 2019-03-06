@@ -142,3 +142,13 @@ img,video {
 .el-carousel__container {
   height: 560px !important;
 }
+.el-dialog {
+
+  &__header {
+    display: none;
+  }
+  &__body {
+    padding: 0 !important;
+    color: inherit !important;
+  }
+}
