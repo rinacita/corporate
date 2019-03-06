@@ -28,7 +28,7 @@ export default {
 @import '~/assets/css/variables.scss';
 
 .back {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.4);
   position: relative;
   color: #fff;
   padding: 160px 48px;
@@ -41,7 +41,7 @@ export default {
     top: 0;
     left: 0;
     background: no-repeat center;
-    background-image: url(~assets/img/dummy.jpg);
+    background-image: url(~assets/img/contact.jpg);
     background-size: cover;
     z-index: -1;
   }

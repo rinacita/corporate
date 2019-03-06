@@ -47,85 +47,87 @@ export default {
     UAnimate
   },
   mounted() {
-    Splitting()
-    console.log('test')
-    const timeLine = new TimelineMax()
-    timeLine
-      .add('big')
-      .add('small')
-      .staggerFromTo(
-        '.anime1',
-        0.8,
-        {
-          scale: 0
-        },
-        {
-          scale: 1,
-          ease: Power4.easeInOut
-        },
-        0.05
-      )
-      .staggerFromTo(
-        '.anime2',
-        0.8,
-        {
-          scale: 0
-        },
-        {
-          scale: 1,
-          ease: Power4.easeInOut
-        },
-        0.05,
-        '-=0.6'
-      )
-      .fromTo(
-        '#big .text-bg',
-        0.8,
-        {
-          scaleX: 0
-        },
-        {
-          scaleX: 1,
-          ease: Power2.easeInOut
-        },
-        '-=0.5'
-      )
-      .staggerFromTo(
-        '.big .char',
-        0.4,
-        {
-          yPercent: 110
-        },
-        {
-          yPercent: 0
-        },
-        0.02,
-        '-=0.5'
-      )
-      .fromTo(
-        '#small .text-bg',
-        0.8,
-        {
-          scaleX: 0
-        },
-        {
-          scaleX: 1,
-          ease: Power2.easeInOut
-        },
-        '-=0.6'
-      )
-      .staggerFromTo(
-        '.small .char',
-        0.4,
-        {
-          yPercent: 110
-        },
-        {
-          yPercent: 0
-        },
-        0.02,
-        '-=0.5'
-      )
+    this.$nextTick(function() {
+      Splitting()
+      console.log('test')
+      const timeLine = new TimelineMax()
+      timeLine
+        .add('big')
+        .add('small')
+        .staggerFromTo(
+          '.anime1',
+          0.8,
+          {
+            scale: 0
+          },
+          {
+            scale: 1,
+            ease: Power4.easeInOut
+          },
+          0.05
+        )
+        .staggerFromTo(
+          '.anime2',
+          0.8,
+          {
+            scale: 0
+          },
+          {
+            scale: 1,
+            ease: Power4.easeInOut
+          },
+          0.05,
+          '-=0.6'
+        )
+        .fromTo(
+          '#big .text-bg',
+          0.8,
+          {
+            scaleX: 0
+          },
+          {
+            scaleX: 1,
+            ease: Power2.easeInOut
+          },
+          '-=0.5'
+        )
+        .staggerFromTo(
+          '.big .char',
+          0.4,
+          {
+            yPercent: 110
+          },
+          {
+            yPercent: 0
+          },
+          0.02,
+          '-=0.5'
+        )
+        .fromTo(
+          '#small .text-bg',
+          0.8,
+          {
+            scaleX: 0
+          },
+          {
+            scaleX: 1,
+            ease: Power2.easeInOut
+          },
+          '-=0.6'
+        )
+        .staggerFromTo(
+          '.small .char',
+          0.4,
+          {
+            yPercent: 110
+          },
+          {
+            yPercent: 0
+          },
+          0.02,
+          '-=0.5'
+        )
+    })
   }
 }
 </script>

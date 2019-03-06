@@ -4,7 +4,7 @@ container(:id="sections[2].link")
   .flex
     .member(v-for="(member, index) in activeMembers" :key="member.id" @click="open(index)")
       .image
-        img(:src="require('~/assets/img/' + member.image + '.jpg')")
+        img(:src="require('~/assets/img/member/' + member.image + '.jpg')")
       div
         .name {{member.name}}
         tag(v-for="position in member.position").margin-right.mobile {{position}}
@@ -13,13 +13,13 @@ container(:id="sections[2].link")
       :autoplay="false"
       arrow="always"
       ref="carousel"
-      :initial-index="modalIndex"
+      :initial-index="this.modalIndex"
     )
       el-carousel-item(v-for="(member, index) in activeMembers" :key="member.id" name="index")
         .modal-inner
           //- .transition-cover
           .modal-image
-            img(:src="require('~/assets/img/' + member.image + '.jpg')")
+            img(:src="require('~/assets/img/member/' + member.image + '.jpg')")
           .modal-info
             .modal-top
               .modal-name {{member.name}}
@@ -63,7 +63,9 @@ export default {
     }
   },
   updated() {
-    this.setActiveItem(this.modalIndex)
+    if (this.dialogVisible) {
+      this.setActiveItem(this.modalIndex)
+    }
   },
   methods: {
     setActiveItem(index) {
