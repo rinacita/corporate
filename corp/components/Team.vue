@@ -153,24 +153,6 @@ export default {
   }
 }
 .modal {
-  &-content {
-    max-width: 1000px;
-    width: 100%;
-    height: 560px;
-    padding: 0;
-    margin: 48px;
-    overflow-x: hidden;
-    @include mq(md) {
-      top: 0;
-      left: 0;
-      max-height: 90%;
-      height: 100%;
-    }
-    @include mq(sm) {
-      margin: 0;
-      max-height: 100%;
-    }
-  }
   &-inner {
     display: flex;
     background: #fff;
@@ -227,36 +209,6 @@ export default {
   &-text {
     margin-top: 24px;
   }
-}
-.direction {
-  display: flex;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  &-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: $yellow;
-    color: $black;
-    font-size: 1.2em;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: 0.3s;
-    &:hover {
-      background: $black;
-      color: #fff;
-    }
-  }
-}
-.close {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  background: #fff;
 }
 .sns {
   font-size: 1.4em;

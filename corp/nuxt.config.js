@@ -10,8 +10,7 @@ module.exports = {
     title: pkg.name,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'viewport', content: 'initial-scale=1, viewport-fit=cover' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
@@ -51,7 +50,6 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/modal.js', ssr: false },
     { src: '~/plugins/scrollLink.js' },
     { src: '~/plugins/scrollEvent.js' },
     { src: '~/plugins/wow.js' },
