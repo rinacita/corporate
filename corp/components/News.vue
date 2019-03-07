@@ -43,9 +43,21 @@ export default {
 .back {
   width: 100%;
   padding: 160px 24px;
-  background: url(~assets/img/dummy.jpg) no-repeat center;
-  background-size: cover;
+  background: rgba(0, 0, 0, 0.3);
   text-align: center;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: no-repeat center;
+    background-image: url(~assets/img/news.jpg);
+    background-size: cover;
+    z-index: -1;
+  }
   @include mq(md) {
     padding: 120px 24px;
   }

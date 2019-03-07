@@ -1,4 +1,4 @@
-
+@import 'variables';
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
@@ -135,4 +135,71 @@ img,video {
     transform: translate3d(0, 0, 0);
     transition-delay: calc(var(--char-index) * 0.02s);
   }
+}
+.el-carousel {
+  height: 100%;
+  &__indicators {
+    display: none;
+  }
+  &__container {
+    height: 100% !important;
+  }
+  &__arrow {
+    background-color: $yellow !important;
+    width: 60px !important;
+    height: 60px !important;
+    color: $black !important;
+    border-radius: 0 !important;
+    top: auto !important;
+    bottom: 0;
+    transform: translateY(0) !important;
+    &:hover {
+      background: $black !important;
+      color: #fff !important;
+    }
+  }
+  &__arrow--right {
+    right: 0 !important;
+  }
+  &__arrow--left {
+    left: auto !important;
+    right: 60px !important;
+  }
+}
+
+.el-dialog {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  max-width: 1000px;
+  height: 560px;
+  @include mq(md) {
+    margin: 0 !important;
+    height: 100%;
+  }
+  &__header {
+    padding: 0 !important;
+  }
+  &__headerbtn {
+    z-index: 10;
+    font-size: 20px !important;
+    padding: 16px !important;
+    top: 0 !important;
+    right: 0 !important;
+  }
+  &__body {
+    padding: 0 !important;
+    color: inherit !important;
+    height: 100%;
+  }
+  &__wrapper {
+    padding: 40px;
+    height: 100vh;
+    @include mq(sm) {
+      padding: 20% 16px 30%;
+    }
+  }
+}
+.el-dialog__headerbtn .el-dialog__close {
+  color: $black !important;
 }

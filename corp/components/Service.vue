@@ -4,7 +4,7 @@
     .info
       section-title.override {{sections[1].title}}
       .logo
-        img(src='~/assets/img/logo.svg')
+        img(src='~/assets/img/chip_logo.svg')
       p.text この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、
       primary-button サービスサイトへ
     .image

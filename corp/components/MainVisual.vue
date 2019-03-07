@@ -47,85 +47,87 @@ export default {
     UAnimate
   },
   mounted() {
-    Splitting()
-    console.log('test')
-    const timeLine = new TimelineMax()
-    timeLine
-      .add('big')
-      .add('small')
-      .staggerFromTo(
-        '.anime1',
-        0.8,
-        {
-          scale: 0
-        },
-        {
-          scale: 1,
-          ease: Power4.easeInOut
-        },
-        0.05
-      )
-      .staggerFromTo(
-        '.anime2',
-        0.8,
-        {
-          scale: 0
-        },
-        {
-          scale: 1,
-          ease: Power4.easeInOut
-        },
-        0.05,
-        '-=0.6'
-      )
-      .fromTo(
-        '#big .text-bg',
-        0.8,
-        {
-          scaleX: 0
-        },
-        {
-          scaleX: 1,
-          ease: Power2.easeInOut
-        },
-        '-=0.5'
-      )
-      .staggerFromTo(
-        '.big .char',
-        0.4,
-        {
-          yPercent: 110
-        },
-        {
-          yPercent: 0
-        },
-        0.02,
-        '-=0.5'
-      )
-      .fromTo(
-        '#small .text-bg',
-        0.8,
-        {
-          scaleX: 0
-        },
-        {
-          scaleX: 1,
-          ease: Power2.easeInOut
-        },
-        '-=0.6'
-      )
-      .staggerFromTo(
-        '.small .char',
-        0.4,
-        {
-          yPercent: 110
-        },
-        {
-          yPercent: 0
-        },
-        0.02,
-        '-=0.5'
-      )
+    this.$nextTick(function() {
+      Splitting()
+      console.log('test')
+      const timeLine = new TimelineMax()
+      timeLine
+        .add('big')
+        .add('small')
+        .staggerFromTo(
+          '.anime1',
+          0.8,
+          {
+            scale: 0
+          },
+          {
+            scale: 1,
+            ease: Power4.easeInOut
+          },
+          0.05
+        )
+        .staggerFromTo(
+          '.anime2',
+          0.8,
+          {
+            scale: 0
+          },
+          {
+            scale: 1,
+            ease: Power4.easeInOut
+          },
+          0.05,
+          '-=0.6'
+        )
+        .fromTo(
+          '#big .text-bg',
+          0.8,
+          {
+            scaleX: 0
+          },
+          {
+            scaleX: 1,
+            ease: Power2.easeInOut
+          },
+          '-=0.5'
+        )
+        .staggerFromTo(
+          '.big .char',
+          0.4,
+          {
+            yPercent: 110
+          },
+          {
+            yPercent: 0
+          },
+          0.02,
+          '-=0.5'
+        )
+        .fromTo(
+          '#small .text-bg',
+          0.8,
+          {
+            scaleX: 0
+          },
+          {
+            scaleX: 1,
+            ease: Power2.easeInOut
+          },
+          '-=0.6'
+        )
+        .staggerFromTo(
+          '.small .char',
+          0.4,
+          {
+            yPercent: 110
+          },
+          {
+            yPercent: 0
+          },
+          0.02,
+          '-=0.5'
+        )
+    })
   }
 }
 </script>
@@ -151,6 +153,7 @@ export default {
   @include mq(sm) {
     font-size: 35px;
     margin-bottom: 0;
+    height: 90vh;
   }
   @include mq(xs) {
     font-size: 30px;
@@ -225,18 +228,9 @@ export default {
   overflow: hidden;
   position: relative;
   img {
-    /* transform: scale(1.01); */
+    transform: scale(1.01);
     /* opacity: 0; */
   }
-  /* &:after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: $black;
-    position: absolute;
-    top: 0;
-    left: 0;
-  } */
 }
 .image {
   /* opacity: 0; */

@@ -10,8 +10,7 @@ module.exports = {
     title: pkg.name,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'viewport', content: 'initial-scale=1, viewport-fit=cover' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
@@ -45,16 +44,16 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['@/assets/css/common.scss'],
+  css: ['@/assets/css/common.scss', 'element-ui/lib/theme-chalk/index.css'],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/modal.js', ssr: false },
     { src: '~/plugins/scrollLink.js' },
     { src: '~/plugins/scrollEvent.js' },
-    { src: '~/plugins/wow.js' }
+    { src: '~/plugins/wow.js' },
+    { src: '~/plugins/element-ui.js' }
   ],
 
   /*
@@ -78,6 +77,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    vendor: ['element-ui'],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
