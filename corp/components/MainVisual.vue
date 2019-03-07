@@ -153,6 +153,7 @@ export default {
   @include mq(sm) {
     font-size: 35px;
     margin-bottom: 0;
+    height: 90vh;
   }
   @include mq(xs) {
     font-size: 30px;
@@ -227,18 +228,9 @@ export default {
   overflow: hidden;
   position: relative;
   img {
-    /* transform: scale(1.01); */
+    transform: scale(1.01);
     /* opacity: 0; */
   }
-  /* &:after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: $black;
-    position: absolute;
-    top: 0;
-    left: 0;
-  } */
 }
 .image {
   /* opacity: 0; */

@@ -137,11 +137,12 @@ img,video {
   }
 }
 .el-carousel {
+  height: 100%;
   &__indicators {
     display: none;
   }
   &__container {
-    height: 560px !important;
+    height: 100% !important;
   }
   &__arrow {
     background-color: $yellow !important;
@@ -171,6 +172,11 @@ img,video {
   box-shadow: none !important;
   width: 100% !important;
   max-width: 1000px;
+  height: 560px;
+  @include mq(md) {
+    margin: 0 !important;
+    height: 100%;
+  }
   &__header {
     padding: 0 !important;
   }
@@ -184,9 +190,14 @@ img,video {
   &__body {
     padding: 0 !important;
     color: inherit !important;
+    height: 100%;
   }
   &__wrapper {
     padding: 40px;
+    height: 100vh;
+    @include mq(sm) {
+      padding: 20% 16px;
+    }
   }
 }
 .el-dialog__headerbtn .el-dialog__close {

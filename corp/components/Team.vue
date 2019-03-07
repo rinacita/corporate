@@ -14,6 +14,7 @@ container(:id="sections[2].link")
       arrow="always"
       ref="carousel"
       :initial-index="this.modalIndex"
+      :top="0"
     )
       el-carousel-item(v-for="(member, index) in activeMembers" :key="member.id" name="index")
         .modal-inner
