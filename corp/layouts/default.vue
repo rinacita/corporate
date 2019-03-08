@@ -3,7 +3,6 @@ main
   component-header
   nuxt
   component-footer
-  modal-portal
 </template>
 <script>
 import ComponentHeader from '~/components/ComponentHeader'

@@ -137,6 +137,8 @@ header {
   color: #fff;
   margin-bottom: 32px;
   letter-spacing: 0.05em;
+  transition: 0.3s ease-out;
+  transition-delay: 0.2s;
   &:last-child {
     margin-bottom: 0;
   }
@@ -157,10 +159,16 @@ header {
   &-enter,
   &-leave-to {
     transform: scale3d(0, 0, 1);
+    .link-mobile {
+      opacity: 0;
+    }
   }
   &-enter-to,
   &-leave {
     transform: scale3d(1, 1, 1);
+    .link-mobile {
+      opacity: 1;
+    }
   }
 }
 </style>
