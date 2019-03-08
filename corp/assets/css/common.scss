@@ -123,6 +123,7 @@ img,video {
 .splitting .word,
 .splitting .char {
   display: inline-flex;
+  vertical-align: bottom;
 }
 .section-title {
   .char {
