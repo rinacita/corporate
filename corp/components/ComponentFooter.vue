@@ -3,9 +3,9 @@ footer
   .wrapper
     p © 2019 rinacita, inc.
     .link
-      a.sns(href='#')
+      a.sns(href='https://twitter.com/rinacita_jp' target="_blank")
         i.fab.fa-twitter
-      a.sns(href='#')
+      a.sns(href='https://www.instagram.com/chip_app/' target="_blank")
         i.fab.fa-instagram
 </template>
 <style lang="scss" scoped>
