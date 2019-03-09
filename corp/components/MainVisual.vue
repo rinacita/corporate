@@ -1,5 +1,5 @@
 <template lang="pug">
-.mv
+.mv(v-bind:style="{ height: windowHeight + 'px' }")
   .copy
     div.text-wrap#big
       h1.big(data-splitting) COLOR THE WORLD
@@ -10,30 +10,30 @@
   .wrapper
     .top.flex
       .square.anime2(style='width: 2.55em')
-        img.image(decoding='async' src='~/assets/img/draw.jpg')
+        img(decoding='async' src='~/assets/img/shibuya.jpg')
       .square.anime1(style='width: 1.7em')
-        .black.image
+        .black
       .square.anime2(style='width: 2.08em')
-        img.image(decoding='async' src='~/assets/img/code.jpg')
+        img(decoding='async' src='~/assets/img/visa.jpg')
       .square.anime1(style='width: 3em')
-        img.image(decoding='async' src='~/assets/img/camera.jpg')
+        img(decoding='async' src='~/assets/img/camera.jpg')
     .bottom.flex
       .left.flex
         .square.anime2(style='width: 2.08em')
-          .yellow.image
+          .yellow
         .square.anime1(style='width: 4.24em')
-          img.image(decoding='async' src='~/assets/img/live.jpg')
+          img(decoding='async' src='~/assets/img/live.jpg')
       .right.flex
         .right-top.flex
           .square.anime1(style='width: 3.16em')
-            img.image(decoding='async' src='~/assets/img/sticker.jpg')
+            img(decoding='async' src='~/assets/img/graffiti.jpg')
           .square.anime1(style='width: 3.16em')
-            img.image(decoding='async' src='~/assets/img/load.jpg')
+            img(decoding='async' src='~/assets/img/load.jpg')
         .right-bottom.flex
           .square.anime2(style='width: 5em')
-            img.image(decoding='async' src='~/assets/img/studio.jpg')
+            img(decoding='async' src='~/assets/img/studio.jpg')
           .square.anime2(style='width: 3.55em')
-            img.image(decoding='async' src='~/assets/img/frontman.jpg')
+            img(decoding='async' src='~/assets/img/frontman.jpg')
 </template>
 <script>
 import { TweenMax } from 'gsap'
@@ -46,14 +46,21 @@ export default {
     UAnimateContainer,
     UAnimate
   },
-  mounted() {
-    this.$nextTick(function() {
+  data: () => {
+    return {
+      windowHeight: window.innerHeight
+    }
+  },
+  methods: {
+    window: (onload = function() {
       Splitting()
-      console.log('test')
       const timeLine = new TimelineMax()
       timeLine
         .add('big')
         .add('small')
+        .set('.mv', {
+          opacity: 1
+        })
         .staggerFromTo(
           '.anime1',
           0.8,
@@ -137,11 +144,11 @@ export default {
 
 .mv {
   display: flex;
-  height: 100vh;
   text-align: center;
   position: relative;
   font-size: 90px;
   margin-bottom: 200px;
+  opacity: 0;
   @include mq(xl) {
     font-size: 70px;
     margin-bottom: 0;
@@ -153,7 +160,8 @@ export default {
   @include mq(sm) {
     font-size: 35px;
     margin-bottom: 0;
-    height: 90vh;
+    /* padding-bottom: calc(constant(safe-area-inset-bottom) + 10%);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 10%); */
   }
   @include mq(xs) {
     font-size: 30px;
@@ -162,6 +170,9 @@ export default {
 }
 .copy {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
@@ -231,9 +242,6 @@ export default {
     transform: scale(1.01);
     /* opacity: 0; */
   }
-}
-.image {
-  /* opacity: 0; */
 }
 .black {
   background: $black;

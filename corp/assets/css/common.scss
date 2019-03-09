@@ -123,6 +123,7 @@ img,video {
 .splitting .word,
 .splitting .char {
   display: inline-flex;
+  vertical-align: bottom;
 }
 .section-title {
   .char {
@@ -194,9 +195,13 @@ img,video {
   }
   &__wrapper {
     padding: 40px;
-    height: 100vh;
     @include mq(sm) {
-      padding: 20% 16px 30%;
+      // padding: 20% 16px 30%;
+      padding-top: 10%;
+      padding-right: 16px;
+      padding-left: 16px;
+      padding-bottom: calc(constant(safe-area-inset-bottom) + 10%);
+      padding-bottom: calc(env(safe-area-inset-bottom) + 10%);
     }
   }
 }
