@@ -6,7 +6,7 @@
       .logo
         img(src='~/assets/img/chip_logo.svg')
       p.text この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、
-      primary-button サービスサイトへ
+      primary-button(href="https://thechip.in/" target="_blank") サービスサイトへ
     .image
       img(src='~/assets/img/chip_mock.png')
 </template>
