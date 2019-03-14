@@ -1,51 +1,37 @@
 [
   {
     "id": 1,
-    "date": "2019.02.05",
-    "title": "ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施",
-    "link": "https://prtimes.jp/main/html/rd/p/000000009.000033650.html",
+    "date": "2018.10.22",
+    "title": "【PRTimes】 リリース2ヶ月で２万ユーザー突破！「CHIP」が複数プランに対応",
+    "link": "https://prtimes.jp/main/html/rd/p/000000008.000033650.html",
     "isActive": true
   },
   {
     "id": 2,
-    "date": "2019.02.06",
-    "title": "ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施",
-    "link": "https://prtimes.jp/main/html/rd/p/000000009.000033650.html",
+    "date": "2018.11.21",
+    "title": "【TechCrunch】 「CHIP」運営のRINACITA、総額4600万円の資金調達を実施",
+    "link": "https://jp.techcrunch.com/2018/11/21/rinacita-fundraising/",
     "isActive": true
   },
   {
     "id": 3,
-    "date": "2019.02.07",
-    "title": "ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施",
-    "link": "https://prtimes.jp/main/html/rd/p/000000009.000033650.html",
+    "date": "2018.12.10",
+    "title": "【WWD】 個人クリエイターに“定額収入”を。ファンクラブ作成アプリ「CHIP」は？",
+    "link": "https://www.wwdjapan.com/753181",
     "isActive": true
   },
   {
     "id": 4,
-    "date": "2019.02.08",
-    "title": "ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施",
-    "link": "https://prtimes.jp/main/html/rd/p/000000009.000033650.html",
+    "date": "2019.01.10",
+    "title": "【GrassHopper】 誰もがアーティストやクリエイターになれる世を目指す - 小澤昂大",
+    "link": "https://grasshopper.tokyo/2019/01/kodai-ozawa",
     "isActive": true
   },
   {
     "id": 5,
-    "date": "2019.02.09",
-    "title": "ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施",
-    "link": "https://prtimes.jp/main/html/rd/p/000000009.000033650.html",
-    "isActive": true
-  },
-  {
-    "id": 6,
-    "date": "2019.02.10",
-    "title": "ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施",
-    "link": "https://prtimes.jp/main/html/rd/p/000000009.000033650.html",
-    "isActive": true
-  },
-  {
-    "id": 7,
-    "date": "2019.02.11",
-    "title": "ファンクラブ作成アプリ「CHIP」運営のRINACITA、総額4600万円の資金調達を実施",
-    "link": "https://prtimes.jp/main/html/rd/p/000000009.000033650.html",
+    "date": "2019.03.01",
+    "title": "【TechCrunch】 CHIPv3.0がリリース！音声や動画での投稿が可能に",
+    "link": "https://jp.techcrunch.com/2019/03/01/rinacita-chip-v3/",
     "isActive": true
   }
 ]

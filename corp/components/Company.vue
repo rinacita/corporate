@@ -4,19 +4,19 @@ container(:id="sections[4].link")
   .wrapper
     .item
       .title 会社名
-      .text 株式会社Rinacita
+      .text 株式会社RINACITA
     .item
-      .title 会社名
-      .text 株式会社Rinacita
+      .title 代表名
+      .text 代表取締役CEO 小澤昂大
     .item
-      .title 会社名
-      .text 株式会社Rinacita
+      .title 所在地
+      .text 150-0045 東京都渋谷区神泉町11-9 ワインアパートメント702号室
     .item
-      .title 会社名
-      .text 株式会社Rinacita
+      .title 事業内容
+      .text アプリ・Webサービスの開発・運営
     .item
-      .title 会社名
-      .text 株式会社Rinacita
+      .title 設立日
+      .text 2018年3月27日
 </template>
 <script>
 import SectionTitle from '~/components/atoms/SectionTitle'
