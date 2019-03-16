@@ -208,3 +208,9 @@ img,video {
 .el-dialog__headerbtn .el-dialog__close {
   color: $black !important;
 }
+
+.sm-br {
+  @include mq(sm) {
+    display: none;
+  }
+}

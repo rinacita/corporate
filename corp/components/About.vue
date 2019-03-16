@@ -1,26 +1,23 @@
 <template lang="pug">
 container(:id="sections[0].link")
   section-title.mb64.align {{sections[0].title}}
-  h3.big-copy ありのまま生きろ。
+  h3.big-copy 感動とワクワクで
     br
-    | 夢を追い求めろ。
+    | 世界を彩る
+  p.about アーティストやクリエイターが生み出す作品には、
+    br.sm-br
+    | 人々を感動させ、幸せにする力があります。
     br
-    | 走り続けろ。
-    br
-    | 不可能なんてない。
-  p.about この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-    br
-    | この文章はダミーです。
+    | そんな感動やワクワクで、世界をもっと夢で溢れる場所にしていきたい。
     br
     br
-    | 文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-    br
-    | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-    br
-    | この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
-    br
-    br
-    | 文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字
+    | ルネサンスの最盛期、 パトロンの支援によって
+    br.sm-br
+    | 多くのアーティストが活躍したように、
+    br.sm-br
+    | 私たちはテクノロジーを駆使し、 個人がもっと自由に創造し、
+    br.sm-br
+    | 活躍できる社会を目指します。
 </template>
 <script>
 import Container from '~/components/atoms/Container'
@@ -45,7 +42,7 @@ export default {
 
 .big-copy {
   font-size: 4.8rem;
-  margin-bottom: 80px;
+  margin-bottom: 48px;
   line-height: 1.6;
   letter-spacing: 0.05em;
   @include mq(md) {
@@ -69,7 +66,7 @@ export default {
 }
 
 .mb64 {
-  margin-bottom: 64px;
+  margin-bottom: 48px;
   @include mq(md) {
     margin-bottom: 32px;
   }

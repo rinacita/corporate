@@ -5,7 +5,7 @@
       section-title.override {{sections[1].title}}
       .logo
         img(src='~/assets/img/chip_logo.svg')
-      p.text この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、
+      p.text アーティストやクリエイターなど、誰でも作れる新しいカタチのファンクラブアプリ「CHIP」。ミュージシャンやYouTuberなどたくさんのユーザーが自分専用のコミュニティを作っています。
       primary-button(href="https://thechip.in/" target="_blank") サービスサイトへ
     .image
       img(src='~/assets/img/chip_mock.png')
