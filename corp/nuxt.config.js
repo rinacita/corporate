@@ -1,13 +1,9 @@
 const pkg = require('./package')
 
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+export default {
   router: {
     base: '/corporate/'
   }
-} : {}
-
-export default {
-  ...routerBase
 }
 
 module.exports = {
