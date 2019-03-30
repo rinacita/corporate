@@ -14,13 +14,33 @@ module.exports = {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, viewport-fit=cover'
       },
-      { hid: 'description', name: 'description', content: '感動とワクワクで世界を彩る' },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'RINACITA, inc.' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: '感動とワクワクで世界を彩る'
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'RINACITA, inc.'
+      },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:url', property: 'og:url', content: 'https://corp.rinacita.com/' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://corp.rinacita.com/'
+      },
       { hid: 'og:title', property: 'og:title', content: 'RINACITA, inc.' },
-      { hid: 'og:description', property: 'og:description', content: '感動とワクワクで世界を彩る' },
-      { hid: 'og:image', property: 'og:image', content: 'https://corp.rinacita.com/assets/img/ogp.png' },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: '感動とワクワクで世界を彩る'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://corp.rinacita.com/assets/img/ogp.png'
+      },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@rinacita_jp' }
     ],
