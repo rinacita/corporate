@@ -1,8 +1,11 @@
 const pkg = require('./package')
+const baseDir = process.env.BASE_DIR || '/'
 
 module.exports = {
   mode: 'spa',
-
+  router: {
+    base: baseDir,
+  },
   /*
   ** Headers of the page
   */
