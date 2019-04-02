@@ -202,6 +202,7 @@ export default {
 .small {
   display: inline-block;
   font-size: 2.4rem;
+  font-family: 'Noto Sans JP black';
   font-weight: 900;
   padding: 0 24px 4px;
   letter-spacing: 0.08em;

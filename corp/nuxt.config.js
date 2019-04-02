@@ -4,7 +4,7 @@ const baseDir = process.env.BASE_DIR || '/'
 module.exports = {
   mode: 'spa',
   router: {
-    base: baseDir,
+    base: baseDir
   },
   /*
   ** Headers of the page
@@ -50,11 +50,6 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://use.typekit.net/fcu2hbe.css' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;subset=japanese'
-      },
       {
         rel: 'stylesheet',
         href:
