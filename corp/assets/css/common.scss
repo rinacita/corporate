@@ -47,14 +47,6 @@ border-collapse: collapse;
 border-spacing: 0;
 }
 /*　デザイン */
-@font-face {
-	font-family: 'Noto Sans JP bold';
-	src: url(~assets/font/NotoSansCJKjp-Bold.woff);
-}
-@font-face {
-	font-family: 'Noto Sans JP black';
-	src: url(~assets/font/NotoSansCJKjp-Black.woff);
-}
 html {
     font-size: 62.5%;
     // @include mq(xs) {
@@ -67,13 +59,13 @@ html {
     box-sizing: border-box;
 }
 body {
-    font-family: futura-pt,'Avenir Next','Helvetica Neue','Helvetica','Arial', YakuHanJP, 'Noto Sans JP bold','Hiragino Sans',游ゴシック体, 'Yu Gothic', YuGothic,'ヒラギノ角ゴシック','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+    font-family: futura-pt,'Avenir Next','Helvetica Neue','Helvetica','Arial', YakuHanJP, 'Noto Sans JP','Hiragino Sans',游ゴシック体, 'Yu Gothic', YuGothic,'ヒラギノ角ゴシック','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;
     text-size-adjust: 100%;
     font-weight: 500;
     overflow-x: hidden;
 }
 textarea {
-  font-family: futura-pt,'Avenir Next','Helvetica Neue','Helvetica','Arial', YakuHanJP, 'Noto Sans JP bold','Hiragino Sans',游ゴシック体, 'Yu Gothic', YuGothic,'ヒラギノ角ゴシック','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+  font-family: futura-pt,'Avenir Next','Helvetica Neue','Helvetica','Arial', YakuHanJP, 'Noto Sans JP','Hiragino Sans',游ゴシック体, 'Yu Gothic', YuGothic,'ヒラギノ角ゴシック','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;
 }
 h1,h2,h3,h4,h5,h6 {
     line-height: 1.2;

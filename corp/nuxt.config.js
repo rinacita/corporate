@@ -53,6 +53,11 @@ module.exports = {
       {
         rel: 'stylesheet',
         href:
+          'https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;subset=japanese'
+      },
+      {
+        rel: 'stylesheet',
+        href:
           'https://cdn.jsdelivr.net/npm/yakuhanjp@3.0.0/dist/css/yakuhanjp.min.css'
       },
       {
