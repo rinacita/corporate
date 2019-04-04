@@ -1,16 +1,13 @@
 const pkg = require('./package')
 
-export default {
-  router: {
-    base: '/corporate/'
-  }
-}
-
 module.exports = {
   mode: 'spa',
   /*
   ** Headers of the page
   */
+  router: {
+    base: '/corporate/'
+  },
   head: {
     title: 'RINACITA, inc.',
     meta: [
