@@ -8,9 +8,6 @@ export default {
 
 module.exports = {
   mode: 'spa',
-  router: {
-    base: baseDir
-  },
   /*
   ** Headers of the page
   */
