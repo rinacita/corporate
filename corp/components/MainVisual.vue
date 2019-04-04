@@ -10,30 +10,30 @@
   .wrapper
     .top.flex
       .square.anime2(style='width: 2.55em')
-        img(decoding='async' src='~/assets/img/shibuya.jpg')
+        img(src='~/assets/img/shibuya.jpg')
       .square.anime1(style='width: 1.7em')
         .black
       .square.anime2(style='width: 2.08em')
-        img(decoding='async' src='~/assets/img/visa.jpg')
+        img(src='~/assets/img/visa.jpg')
       .square.anime1(style='width: 3em')
-        img(decoding='async' src='~/assets/img/camera.jpg')
+        img(src='~/assets/img/camera.jpg')
     .bottom.flex
       .left.flex
         .square.anime2(style='width: 2.08em')
           .yellow
         .square.anime1(style='width: 4.24em')
-          img(decoding='async' src='~/assets/img/live.jpg')
+          img(src='~/assets/img/live.jpg')
       .right.flex
         .right-top.flex
           .square.anime1(style='width: 3.16em')
-            img(decoding='async' src='~/assets/img/graffiti.jpg')
+            img(src='~/assets/img/graffiti.jpg')
           .square.anime1(style='width: 3.16em')
-            img(decoding='async' src='~/assets/img/load.jpg')
+            img(src='~/assets/img/load.jpg')
         .right-bottom.flex
           .square.anime2(style='width: 5em')
-            img(decoding='async' src='~/assets/img/studio.jpg')
+            img(src='~/assets/img/studio.jpg')
           .square.anime2(style='width: 3.55em')
-            img(decoding='async' src='~/assets/img/frontman.jpg')
+            img(src='~/assets/img/frontman.jpg')
 </template>
 <script>
 import { TweenMax } from 'gsap'
@@ -51,88 +51,90 @@ export default {
       windowHeight: window.innerHeight
     }
   },
-  mounted() {
-    Splitting()
-    const timeLine = new TimelineMax()
-    timeLine
-      .add('big')
-      .add('small')
-      .set('.mv', {
-        opacity: 1
-      })
-      .staggerFromTo(
-        '.anime1',
-        0.8,
-        {
-          scale: 0
-        },
-        {
-          scale: 1,
-          ease: Power4.easeInOut
-        },
-        0.05
-      )
-      .staggerFromTo(
-        '.anime2',
-        0.8,
-        {
-          scale: 0
-        },
-        {
-          scale: 1,
-          ease: Power4.easeInOut
-        },
-        0.05,
-        '-=0.6'
-      )
-      .fromTo(
-        '#big .text-bg',
-        0.8,
-        {
-          scaleX: 0
-        },
-        {
-          scaleX: 1,
-          ease: Power2.easeInOut
-        },
-        '-=0.5'
-      )
-      .staggerFromTo(
-        '.big .char',
-        0.4,
-        {
-          yPercent: 110
-        },
-        {
-          yPercent: 0
-        },
-        0.02,
-        '-=0.5'
-      )
-      .fromTo(
-        '#small .text-bg',
-        0.8,
-        {
-          scaleX: 0
-        },
-        {
-          scaleX: 1,
-          ease: Power2.easeInOut
-        },
-        '-=0.6'
-      )
-      .staggerFromTo(
-        '.small .char',
-        0.4,
-        {
-          yPercent: 110
-        },
-        {
-          yPercent: 0
-        },
-        0.02,
-        '-=0.5'
-      )
+  methods: {
+    window: (onload = function() {
+      Splitting()
+      const timeLine = new TimelineMax()
+      timeLine
+        .add('big')
+        .add('small')
+        .set('.mv', {
+          opacity: 1
+        })
+        .staggerFromTo(
+          '.anime1',
+          0.8,
+          {
+            scale: 0
+          },
+          {
+            scale: 1,
+            ease: Power4.easeInOut
+          },
+          0.05
+        )
+        .staggerFromTo(
+          '.anime2',
+          0.8,
+          {
+            scale: 0
+          },
+          {
+            scale: 1,
+            ease: Power4.easeInOut
+          },
+          0.05,
+          '-=0.6'
+        )
+        .fromTo(
+          '#big .text-bg',
+          0.8,
+          {
+            scaleX: 0
+          },
+          {
+            scaleX: 1,
+            ease: Power2.easeInOut
+          },
+          '-=0.5'
+        )
+        .staggerFromTo(
+          '.big .char',
+          0.4,
+          {
+            yPercent: 110
+          },
+          {
+            yPercent: 0
+          },
+          0.02,
+          '-=0.5'
+        )
+        .fromTo(
+          '#small .text-bg',
+          0.8,
+          {
+            scaleX: 0
+          },
+          {
+            scaleX: 1,
+            ease: Power2.easeInOut
+          },
+          '-=0.6'
+        )
+        .staggerFromTo(
+          '.small .char',
+          0.4,
+          {
+            yPercent: 110
+          },
+          {
+            yPercent: 0
+          },
+          0.02,
+          '-=0.5'
+        )
+    })
   }
 }
 </script>
