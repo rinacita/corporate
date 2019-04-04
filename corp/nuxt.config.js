@@ -1,5 +1,10 @@
 const pkg = require('./package')
-const baseDir = process.env.BASE_DIR || '/'
+
+export default {
+  router: {
+    base: '/corporate/'
+  }
+}
 
 module.exports = {
   mode: 'spa',
