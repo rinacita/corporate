@@ -142,7 +142,6 @@ export default {
 }
 .name {
   font-size: 1.8rem;
-  font-family: 'Noto Sans JP black';
   font-weight: 900;
   letter-spacing: 0.1em;
   margin-bottom: 6px;
@@ -197,7 +196,6 @@ export default {
   }
   &-name {
     font-size: 2.4rem;
-    font-family: 'Noto Sans JP black';
     font-weight: 900;
     letter-spacing: 0.05em;
     margin-bottom: 8px;

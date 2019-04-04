@@ -45,7 +45,6 @@ export default {
   margin-bottom: 48px;
   line-height: 1.6;
   letter-spacing: 0.05em;
-  font-family: 'Noto Sans JP black';
   font-weight: 900;
   @include mq(md) {
     font-size: 3.2rem;

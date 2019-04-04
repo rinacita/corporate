@@ -51,90 +51,88 @@ export default {
       windowHeight: window.innerHeight
     }
   },
-  methods: {
-    window: (onload = function() {
-      Splitting()
-      const timeLine = new TimelineMax()
-      timeLine
-        .add('big')
-        .add('small')
-        .set('.mv', {
-          opacity: 1
-        })
-        .staggerFromTo(
-          '.anime1',
-          0.8,
-          {
-            scale: 0
-          },
-          {
-            scale: 1,
-            ease: Power4.easeInOut
-          },
-          0.05
-        )
-        .staggerFromTo(
-          '.anime2',
-          0.8,
-          {
-            scale: 0
-          },
-          {
-            scale: 1,
-            ease: Power4.easeInOut
-          },
-          0.05,
-          '-=0.6'
-        )
-        .fromTo(
-          '#big .text-bg',
-          0.8,
-          {
-            scaleX: 0
-          },
-          {
-            scaleX: 1,
-            ease: Power2.easeInOut
-          },
-          '-=0.5'
-        )
-        .staggerFromTo(
-          '.big .char',
-          0.4,
-          {
-            yPercent: 110
-          },
-          {
-            yPercent: 0
-          },
-          0.02,
-          '-=0.5'
-        )
-        .fromTo(
-          '#small .text-bg',
-          0.8,
-          {
-            scaleX: 0
-          },
-          {
-            scaleX: 1,
-            ease: Power2.easeInOut
-          },
-          '-=0.6'
-        )
-        .staggerFromTo(
-          '.small .char',
-          0.4,
-          {
-            yPercent: 110
-          },
-          {
-            yPercent: 0
-          },
-          0.02,
-          '-=0.5'
-        )
-    })
+  mounted() {
+    Splitting()
+    const timeLine = new TimelineMax()
+    timeLine
+      .add('big')
+      .add('small')
+      .set('.mv', {
+        opacity: 1
+      })
+      .staggerFromTo(
+        '.anime1',
+        0.8,
+        {
+          scale: 0
+        },
+        {
+          scale: 1,
+          ease: Power4.easeInOut
+        },
+        0.05
+      )
+      .staggerFromTo(
+        '.anime2',
+        0.8,
+        {
+          scale: 0
+        },
+        {
+          scale: 1,
+          ease: Power4.easeInOut
+        },
+        0.05,
+        '-=0.6'
+      )
+      .fromTo(
+        '#big .text-bg',
+        0.8,
+        {
+          scaleX: 0
+        },
+        {
+          scaleX: 1,
+          ease: Power2.easeInOut
+        },
+        '-=0.5'
+      )
+      .staggerFromTo(
+        '.big .char',
+        0.4,
+        {
+          yPercent: 110
+        },
+        {
+          yPercent: 0
+        },
+        0.02,
+        '-=0.5'
+      )
+      .fromTo(
+        '#small .text-bg',
+        0.8,
+        {
+          scaleX: 0
+        },
+        {
+          scaleX: 1,
+          ease: Power2.easeInOut
+        },
+        '-=0.6'
+      )
+      .staggerFromTo(
+        '.small .char',
+        0.4,
+        {
+          yPercent: 110
+        },
+        {
+          yPercent: 0
+        },
+        0.02,
+        '-=0.5'
+      )
   }
 }
 </script>
@@ -202,7 +200,6 @@ export default {
 .small {
   display: inline-block;
   font-size: 2.4rem;
-  font-family: 'Noto Sans JP black';
   font-weight: 900;
   padding: 0 24px 4px;
   letter-spacing: 0.08em;
