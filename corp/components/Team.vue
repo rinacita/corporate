@@ -7,7 +7,7 @@ container(:id="sections[2].link")
         img(:src="require('~/assets/img/member/' + member.image + '.jpg')")
       div
         .name {{member.name}}
-        tag(v-for="position in member.position").margin-right.mobile {{position}}
+        tag(v-for="position in member.position").margin-right.margin-bottom.mobile {{position}}
   el-dialog(:visible.sync="dialogVisible")
     el-carousel(
       :autoplay="false"
@@ -123,6 +123,9 @@ export default {
   &:last-child {
     margin-right: 0;
   }
+}
+.margin-bottom {
+  margin-bottom: 4px;
 }
 .member {
   width: 21.666%;

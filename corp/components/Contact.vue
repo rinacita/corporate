@@ -5,7 +5,7 @@
     p.text 共催・提携や取材のご依頼、採用に関するお問い合わせは下記よりお気軽にお問い合わせください。
       br.sm-br
       | お問い合わせ内容の確認後、担当者よりご連絡させて頂きます。
-    primary-button 問い合わせする
+    primary-button(href="mailto:info@rinacita.com") 問い合わせする
 </template>
 <script>
 import SectionTitle from '~/components/atoms/SectionTitle'

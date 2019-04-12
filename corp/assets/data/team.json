@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "小澤 昂大",
-    "position": ["CEO", "FOUNDER"],
+    "position": ["CEO", "FOUNDER", "ENGINEER", "DESIGNER"],
     "twitter": "kodai_ozawa",
     "facebook": "ozawa.kodai",
     "image": "01",
@@ -12,7 +12,7 @@
   {
     "id": 2,
     "name": "秋葉 祐人",
-    "position": ["CTO", "FOUNDER"],
+    "position": ["CTO", "FOUNDER", "ENGINEER"],
     "twitter": "akkey0222",
     "facebook": "akkey0222",
     "image": "02",
@@ -21,52 +21,12 @@
   },
   {
     "id": 3,
-    "name": "皆川 かほ",
-    "position": ["MARKETER"],
-    "twitter": "kodai_ozawa",
-    "facebook": "ozawa.kodai",
-    "image": "03",
-    "history": "高校3年次に新入生交流会イベントの運営に携わり、大学入学後はNexter株式会社にて若者マーケティングの長期インターンやインフルエンサーを起用するイベントを運営。メイク動画アプリ”FirstMake”リリースにあたってのマーケティング、Hotspringでの業務を経験。法政大学理工学部在籍。",
-    "isActive": true
-  },
-  {
-    "id": 4,
-    "name": "松江 翔輝",
-    "position": ["XXX"],
-    "twitter": "ev1217",
-    "facebook": "shoki.matsue",
-    "image": "04",
-    "history": "大阪芸術大学卒業、株式会社ガシュー取締役。中高生時代にトランペット奏者として活動していた経験や芸術大学出身という自身の背景とRINACITAの理念に共感し2019年1月にRINACITAにxx担当として参画",
-    "isActive": true
-  },
-  {
-    "id": 5,
     "name": "佐々木 駆",
     "position": ["ENGINEER"],
     "twitter": "kakohate",
     "facebook": "sckacr",
     "image": "05",
     "history": "エンジニアとして数社インターンを経験、rinacitaではサーバーサイドを担当している。東京高専在籍。",
-    "isActive": true
-  },
-  {
-    "id": 6,
-    "name": "垰 尚太朗",
-    "position": ["ENGINEER"],
-    "twitter": "taoshotaro",
-    "facebook": "taoshotaro",
-    "image": "06",
-    "history": "",
-    "isActive": true
-  },
-  {
-    "id": 7,
-    "name": "塚本 武志",
-    "position": ["ENGINEER"],
-    "twitter": "itometeam",
-    "facebook": "profile.php?id=100003942744399",
-    "image": "07",
-    "history": "",
     "isActive": true
   }
 ]
