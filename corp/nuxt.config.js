@@ -30,7 +30,7 @@ module.exports = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://corp.rinacita.com/'
+        content: 'http://rinacita.com/'
       },
       { hid: 'og:title', property: 'og:title', content: 'RINACITA, inc.' },
       {
@@ -41,7 +41,7 @@ module.exports = {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://corp.rinacita.com/assets/img/ogp.png'
+        content: 'http://rinacita.com/assets/img/ogp.png'
       },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@rinacita_jp' }
