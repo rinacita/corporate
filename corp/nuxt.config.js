@@ -6,7 +6,7 @@ module.exports = {
   ** Headers of the page
   */
   router: {
-    base: '/corporate/'
+    base: '/'
   },
   head: {
     title: 'RINACITA, inc.',
