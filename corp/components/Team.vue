@@ -201,7 +201,6 @@ export default {
     font-size: 2.4rem;
     font-weight: 900;
     letter-spacing: 0.05em;
-    margin-bottom: 8px;
     @include mq(md) {
       font-size: 2rem;
     }
@@ -227,6 +226,7 @@ export default {
 .override {
   font-size: 1.4rem;
   padding: 6px;
+  margin-top: 8px;
 }
 .mobile {
   font-size: 1rem;
