@@ -41,7 +41,7 @@ module.exports = {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'http://rinacita.com/assets/img/ogp.png'
+        content: 'http://rinacita.com/ogp.png'
       },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@rinacita_jp' }
