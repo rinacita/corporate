@@ -4,21 +4,21 @@
     "date": "2018.10.22",
     "title": "【PRTimes】 リリース2ヶ月で２万ユーザー突破！「CHIP」が複数プランに対応",
     "link": "https://prtimes.jp/main/html/rd/p/000000008.000033650.html",
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 2,
     "date": "2018.11.21",
     "title": "【TechCrunch】 「CHIP」運営のRINACITA、総額4600万円の資金調達を実施",
     "link": "https://jp.techcrunch.com/2018/11/21/rinacita-fundraising/",
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 3,
     "date": "2018.12.10",
     "title": "【WWD】 個人クリエイターに“定額収入”を。ファンクラブ作成アプリ「CHIP」は？",
     "link": "https://www.wwdjapan.com/753181",
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 4,
@@ -32,6 +32,27 @@
     "date": "2019.03.01",
     "title": "【TechCrunch】 CHIPv3.0がリリース！音声や動画での投稿が可能に",
     "link": "https://jp.techcrunch.com/2019/03/01/rinacita-chip-v3/",
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "date": "2020.02.12",
+    "title": "【TechCrunch】　月額会費制のコミュニティを簡単に作れる「CHIP」、形を変えて再度ローンチ",
+    "link": "https://jp.techcrunch.com/2020/02/12/chip-restart/",
+    "isActive": true
+  },
+  {
+    "id": 7,
+    "date": "2020.02.21",
+    "title": "【PRTimes】 メンバーシップ作成アプリ「CHIP」のAndroid版がリリース！",
+    "link": "https://prtimes.jp/main/html/rd/p/000000016.000033650.html/",
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "date": "2020.03.11",
+    "title": "【キャリアハック】 僕は「CHIP」でリベンジを誓う｜小澤昂大",
+    "link": "https://careerhack.en-japan.com/report/detail/1333",
     "isActive": true
   }
 ]

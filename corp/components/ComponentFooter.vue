@@ -1,7 +1,7 @@
 <template lang="pug">
 footer
   .wrapper
-    p © 2019 RINACITA, inc.
+    p © 2020 RINACITA, inc.
     .link
       a.sns(href='https://twitter.com/rinacita_jp' target="_blank")
         i.fab.fa-twitter

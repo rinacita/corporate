@@ -2,8 +2,8 @@
   {
     "id": 1,
     "name": "小澤 昂大",
-    "position": ["CEO", "FOUNDER", "ENGINEER", "DESIGNER"],
-    "twitter": "kodai_ozawa",
+    "position": ["CEO", "ENGINEER", "DESIGNER"],
+    "twitter": "ozwxy",
     "facebook": "ozawa.kodai",
     "image": "01",
     "history": "CyberAgentやmercari、Microsoftなどでのインターンを経て、2018年にRINACITAを創業。小さい頃から吹奏楽やバンドなどドラマーとして音楽活動を続け、高校時代には全国大会で最優秀賞を受賞するなど、自身もアーティストとして活躍している。現在はRINACITAで開発やデザインを担当している。慶應義塾大学SFC在籍。",
@@ -12,21 +12,11 @@
   {
     "id": 2,
     "name": "秋葉 祐人",
-    "position": ["CTO", "FOUNDER", "ENGINEER"],
+    "position": ["CTO", "ENGINEER"],
     "twitter": "akkey0222",
     "facebook": "akkey0222",
     "image": "02",
     "history": "1997年京都府生まれ。立命館大学情報理工学部在学中にRINACITAを共同創業。中学生の頃からプログラミングを始め、大学在学中にFlamingo社にてiOSエンジニアとして約2年半実務経験を積む。Yahoo! JAPAN, CyberAgentなどでもインターンを経験。RINACITAでは、iOSとバックエンドを主に担当している。",
-    "isActive": true
-  },
-  {
-    "id": 3,
-    "name": "佐々木 駆",
-    "position": ["ENGINEER"],
-    "twitter": "kakohate",
-    "facebook": "sckacr",
-    "image": "05",
-    "history": "エンジニアとして数社インターンを経験、rinacitaではサーバーサイドを担当している。東京高専在籍。",
     "isActive": true
   }
 ]
