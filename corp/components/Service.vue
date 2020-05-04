@@ -4,9 +4,9 @@
     .info
       section-title.override {{sections[1].title}}
       .logo
-        img(src='~/assets/img/chip_logo.svg')
+        img(src='~/assets/img/chip_logo_colored.svg')
       p.text アーティストやクリエイターなど、誰でも作れる新しいカタチのファンクラブアプリ「CHIP」。ミュージシャンやYouTuberなどたくさんのユーザーが自分専用のコミュニティを作っています。
-      primary-button(href="https://thechip.in/" target="_blank") サービスサイトへ
+      primary-button(href="https://chip.app/" target="_blank") サービスサイトへ
     .image
       img(src='~/assets/img/chip_mock.png')
 </template>

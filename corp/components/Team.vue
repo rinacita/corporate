@@ -18,7 +18,7 @@ container(:id="sections[2].link")
     )
       el-carousel-item(v-for="(member, index) in activeMembers" :key="member.id" name="index")
         .modal-inner
-          //- .transition-cover
+          .transition-cover
           .modal-image
             img(:src="require('~/assets/img/member/' + member.image + '.jpg')")
           .modal-info
