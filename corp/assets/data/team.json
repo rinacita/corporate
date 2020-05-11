@@ -6,7 +6,7 @@
     "twitter": "ozwxy",
     "facebook": "ozawa.kodai",
     "image": "01",
-    "history": "CyberAgentやmercari、Microsoftなどでのインターンを経て、2018年にRINACITAを創業。小さい頃から吹奏楽やバンドなどドラマーとして音楽活動を続け、高校時代には全国大会で最優秀賞を受賞するなど、自身もアーティストとして活躍している。現在はRINACITAで開発やデザインを担当している。慶應義塾大学SFC在籍。",
+    "history": "CyberAgentやmercari、Microsoftなどでのインターンを経て、2018年にRINACITAを創業。小さい頃から吹奏楽やバンドなどドラマーとして音楽活動を続け、高校時代には全国大会で最優秀賞を受賞するなど、自身もアーティストとして活躍している。現在はRINACITAでPMや開発、デザインを担当している他、いくつかのスタートアップ企業などに技術顧問やデザイン顧問として参画する。慶應義塾大学SFC。",
     "isActive": true
   },
   {
@@ -17,6 +17,26 @@
     "facebook": "akkey0222",
     "image": "02",
     "history": "1997年京都府生まれ。立命館大学情報理工学部在学中にRINACITAを共同創業。中学生の頃からプログラミングを始め、大学在学中にFlamingo社にてiOSエンジニアとして約2年半実務経験を積む。Yahoo! JAPAN, CyberAgentなどでもインターンを経験。RINACITAでは、iOSとバックエンドを主に担当している。",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "name": "塚本 武志",
+    "position": ["ENGINEER"],
+    "twitter": "itometeam",
+    "facebook": "",
+    "image": "07",
+    "history": "東京大学卒業。CyberAgentのCATSチームで新規事業のAndroidアプリ開発をする。",
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "name": "松江 翔輝",
+    "position": ["ADVISER"],
+    "twitter": "ev1217",
+    "facebook": "shoki.matsue",
+    "image": "04",
+    "history": "株式会社QUARTZ CEO&FOUNDER。一般社団法人 UMF 理事。",
     "isActive": true
   }
 ]
