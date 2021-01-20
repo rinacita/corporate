@@ -24,7 +24,7 @@
     "core-js": "^2.6.3",
     "cross-env": "^5.2.0",
     "element-ui": "^2.6.1",
-    "gsap": "^2.0.2",
+    "gsap": "^3.6.0",
     "nuxt": "^2.12.2",
     "splitting": "^1.0.6",
     "vue-scrollto": "^2.13.0",
